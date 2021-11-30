@@ -1,0 +1,17 @@
+{
+    "include": [
+        "./resources/js/*"
+    ],
+    "compilerOptions": {
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",
+        "sourceMap": true,
+        "allowJs": true
+      },
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+      ]  
+}

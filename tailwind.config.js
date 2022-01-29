@@ -2,8 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    mode: 'jit',
-    purge: [
+    content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
@@ -11,12 +10,12 @@ module.exports = {
         './resources/js/**/*.vue',
     ],
 
-    darkMode: "class",
-
     theme: {
         colors: {
+            'current': 'currentColor',
             'transparent': 'transparent',
             'gray': colors.trueGray,
+
             'purple': '#7413dc',
             'teal': '#00a794',
             'black': '#000000',
@@ -64,10 +63,6 @@ module.exports = {
                 'text-color': 'color',
             },
         },
-    },
-
-    variants: {
-        opacity: ['responsive', 'hover', 'focus', 'disabled'],
     },
 
     plugins: [require('@tailwindcss/forms')],

@@ -20,7 +20,7 @@
                     :class="[widthClass, alignmentClasses]"
                     style="display: none;"
                     @click="open = false">
-                <div class="rounded-md ring-1 ring-black ring-opacity-5" :class="contentClasses">
+                <div class="flex flex-col shadow-sm border border-gray-200 dark:border-gray-700" :class="contentClasses">
                     <slot name="content"></slot>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export default defineComponent({
             default: '48'
         },
         contentClasses: {
-            default: () => ['py-1', 'bg-white']
+            default: () => ['bg-white', 'dark:bg-gray-800']
         }
     },
 
@@ -65,6 +65,7 @@ export default defineComponent({
         widthClass() {
             return {
                 '48': 'w-48',
+                '72': 'w-72',
             }[this.width.toString()]
         },
 

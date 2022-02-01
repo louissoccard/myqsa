@@ -63,6 +63,10 @@ module.exports = {
                 'text-color': 'color',
             },
         },
+
+        minWidth: {
+            '72': '18rem',
+        },
     },
 
     plugins: [require('@tailwindcss/forms')],

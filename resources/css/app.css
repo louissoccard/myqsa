@@ -1,3 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Make clicks pass-through */
+#nprogress {
+    pointer-events: none;
+}

@@ -39,7 +39,7 @@
                         <template #content>
                             <DropdownItem class="px-6 py-4 border-b border-gray-300 dark:border-gray-700">
                                 <h4 class="text-xl font-bold">{{ fullName }}</h4>
-                                <p class="text-sm">District</p>
+                                <p class="text-sm">{{ this.user.district }}</p>
                             </DropdownItem>
                             <DropdownItem :href="route('profile.show')" icon="user" class="flex items-center">
                                 <span class="inline">Manage Account</span>
@@ -98,7 +98,7 @@
                         <div class="mb-3">
                             <DropdownItem class="px-6">
                                 <h4 class="text-xl font-bold">{{ fullName }}</h4>
-                                <p class="text-sm">District</p>
+                                <p class="text-sm">{{ this.user.district }}</p>
                             </DropdownItem>
                             <div class="w-full my-3 px-3">
                                 <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>

@@ -10,7 +10,11 @@
                     <Input id="last-name" class="inline-block w-1/2 pl-2" label="Last Name" type="text" v-model="form.last_name" required autocomplete="family-name" />
                 </div>
                 <Input id="email-address" class="w-full mb-6" label="Email Address" type="email" v-model="form.email" required />
-                <Input id="password" class="w-full" label="Password" type="password" v-model="form.password" required autocomplete="new-password" />
+                <Input id="password" class="w-full mb-6" label="Password" type="password" v-model="form.password" required autocomplete="new-password" />
+                <Select id="district" class="w-full" label="District" v-model="form.district" required>
+                    <option value="null" selected>Select</option>
+                    <option v-for="district of districts" :key="district.id" :value="district.id">{{ district.name }}</option>
+                </Select>
                 <ValidationErrors class="mt-4"></ValidationErrors>
                 <div class="mt-8 text-right w-full mb-6">
                     <Button class="inline bg-navy w-32 hover:bg-navy-darkened disabled:bg-navy-darkened" :disabled="form.processing" :loading="form.processing">Register</Button>
@@ -25,13 +29,18 @@
 import {defineComponent} from "vue";
 import Logo from "@/Components/Logo";
 import Input from "@/Components/Forms/Input";
+import Select from "@/Components/Forms/Select";
 import Button from "@/Components/Buttons/Button";
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import ValidationErrors from "@/Components/Forms/ValidationErrors";
 
 export default defineComponent({
-    components: {ValidationErrors, Button, Input, Logo, Head, Link},
+    components: {ValidationErrors, Button, Input, Select, Logo, Head, Link},
     layout: null,
+
+    props: {
+      districts: Array,
+    },
 
     data() {
         return {
@@ -40,6 +49,7 @@ export default defineComponent({
                 last_name: '',
                 email: '',
                 password: '',
+                district: 'null',
             })
         }
     },

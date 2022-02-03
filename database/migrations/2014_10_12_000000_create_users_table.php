@@ -24,8 +24,6 @@ class CreateUsersTable extends Migration
             $table->text('notes')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('district_id')->references('id')->on('districts');
         });
     }
 

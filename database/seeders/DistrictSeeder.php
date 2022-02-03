@@ -14,6 +14,7 @@ class DistrictSeeder extends Seeder
      */
     public function run()
     {
+        District::create(['name' => 'Hampshire (County Role)']);
         District::create(['name' => 'Andover']);
         District::create(['name' => 'Basingstoke East']);
         District::create(['name' => 'Basingstoke West']);

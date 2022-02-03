@@ -8,7 +8,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
-        './resources/js/app.js',
+        './resources/js/*.js',
     ],
 
     theme: {
@@ -63,10 +63,18 @@ module.exports = {
                 'border-color': 'border-color',
                 'text-color': 'color',
             },
-        },
 
-        minWidth: {
-            '72': '18rem',
+            minWidth: {
+                '72': '18rem',
+            },
+
+            maxWidth: {
+                'xxs': '10rem',
+            },
+
+            minHeight: {
+                '28': '7rem',
+            }
         },
     },
 };

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('district_id');
+            $table->text('notes')->nullable();
             $table->rememberToken();
             $table->timestamps();
 

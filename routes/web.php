@@ -19,3 +19,4 @@ use Inertia\Inertia;
 */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [\App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->post('/save-notes', [\App\Http\Controllers\DashboardController::class, 'save_notes'])->name('dashboard.save-notes');

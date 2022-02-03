@@ -1,4 +1,7 @@
 require('./bootstrap');
+window.progressBars = require('./progressBars');
+
+let progressBars = [];
 
 import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/inertia-vue3';

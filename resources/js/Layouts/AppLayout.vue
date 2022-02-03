@@ -138,7 +138,7 @@
 
             <div class="relative w-full mt-16 md:ml-64">
                 <main>
-                    <div class="absolute inset-0 container mx-auto p-6 md:py-10 md:px-10 grid"
+                    <div class="absolute inset-0 mx-auto p-6 md:py-10 md:px-10"
                          :class="{ 'overflow-y-hidden': showingMobileSidebar, 'overflow-y-auto': !showingMobileSidebar }">
                         <slot></slot>
                     </div>

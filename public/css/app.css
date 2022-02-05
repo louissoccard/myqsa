@@ -666,6 +666,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-28 {
   min-height: 7rem;
 }
+.min-h-full {
+  min-height: 100%;
+}
 .w-5 {
   width: 1.25rem;
 }
@@ -1598,6 +1601,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .dark\:bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-gray-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(64 64 64 / var(--tw-bg-opacity));
   }
 
   .dark\:text-grey-5 {

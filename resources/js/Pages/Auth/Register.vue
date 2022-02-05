@@ -1,7 +1,7 @@
 <template>
     <Head title="Register" />
 
-    <div class="flex items-center justify-center w-screen h-full bg-gray-100 dark:bg-gray-800">
+    <div class="flex items-center justify-center w-screen min-h-full bg-gray-100 dark:bg-gray-800 p-4">
         <div class="flex flex-col items-center w-full max-w-md bg-white dark:bg-black shadow-md px-8 sm:px-16 py-8">
             <Logo width="w-40" class="mb-8 max-h-20" />
             <form @submit.prevent="submit">
@@ -13,8 +13,9 @@
                 <Input id="password" class="w-full mb-6" label="Password" type="password" v-model="form.password" required autocomplete="new-password" />
                 <Select id="district" class="w-full" label="District" v-model="form.district" required>
                     <option value="null" selected>Select</option>
-                    <option v-for="district of districts" :key="district.id" :value="district.id">{{ district.name }}</option>
+                    <option v-for="district of formattedDistricts" :key="district.id" :value="district.id">{{ district.name }}</option>
                 </Select>
+                <Warning class="mt-4" v-show="this.districts.filter(district => district.name === 'Hampshire' && district.id === parseInt(form.district)).length === 1">If you have a Hampshire Scouts Microsoft account you should use that to <Link :href="route('sign-in')" class="font-bold hover:text-blue">Sign In</Link>. You do not need to register for an account.</Warning>
                 <ValidationErrors class="mt-4"></ValidationErrors>
                 <div class="mt-8 text-right w-full mb-6">
                     <Button class="inline bg-navy w-32 hover:bg-navy-darkened disabled:bg-navy-darkened" :disabled="form.processing" :loading="form.processing">Register</Button>
@@ -33,9 +34,10 @@ import Select from "@/Components/Forms/Select";
 import Button from "@/Components/Buttons/Button";
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import ValidationErrors from "@/Components/Forms/ValidationErrors";
+import Warning from "@/Components/Interface/Warning";
 
 export default defineComponent({
-    components: {ValidationErrors, Button, Input, Select, Logo, Head, Link},
+    components: {Warning, ValidationErrors, Button, Input, Select, Logo, Head, Link},
     layout: null,
 
     props: {
@@ -59,6 +61,12 @@ export default defineComponent({
             this.form.post(this.route('register'), {
                onFinish: () => this.form.reset('password')
             });
+        }
+    },
+
+    computed: {
+        formattedDistricts() {
+            return this.districts.map(district => {return district.name === 'Hampshire' ? {id: district.id, name: 'Hampshire (County Role)'} : district});
         }
     }
 })

@@ -1,7 +1,7 @@
 <template>
     <div class="text-left" :class="containerClass">
         <label v-if="label" class="block" :for="id">{{ label }}</label>
-        <textarea :id="id" class="block w-full bg-white dark:bg-gray-800 border-2 border-transparent focus:border-navy focus:dark:border-gray-200 focus:outline-none focus:ring-0 px-2 py-1" :class="this.class" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="textarea"></textarea>
+        <textarea :id="id" class="block w-full bg-white dark:bg-gray-800 border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-200 focus:outline-none focus:ring-0 px-2 py-1" :class="this.class" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="textarea"></textarea>
     </div>
 </template>
 

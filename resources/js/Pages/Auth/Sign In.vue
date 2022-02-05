@@ -1,7 +1,7 @@
 <template>
     <Head title="Sign In" />
 
-    <div class="flex items-center justify-center w-screen h-full bg-gray-100 dark:bg-gray-800">
+    <div class="flex items-center justify-center w-screen h-full bg-gray-100 dark:bg-gray-800 p-4">
         <div class="flex flex-col items-center w-full max-w-md bg-white dark:bg-black shadow-md px-8 sm:px-16 py-8">
             <Logo width="w-40" class="mb-8 max-h-20" />
             <form @submit.prevent="submit" class="flex flex-col w-full">

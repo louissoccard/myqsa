@@ -29,7 +29,7 @@
     <div class="flex flex-col lg:flex-row lg:space-x-4 items-stretch">
         <Card title="My Notes" class="lg:w-1/2 mb-4 lg:mb-0">
             <form class="flex flex-col items-end flex-1 py-4" @submit.prevent="submit">
-                <TextArea id="notes" container-class="flex w-full flex-1" class="flex-1 resize-none overflow-y-auto min-h-28" v-model="form.notes"></TextArea>
+                <TextArea id="notes" container-class="flex w-full flex-1" class="flex-1 resize-none overflow-y-auto min-h-28 dark:bg-gray-700" v-model="form.notes"></TextArea>
                 <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened text-sm w-24 mt-2"
                         :disabled="form.processing" :loading="form.processing">Save
                 </Button>

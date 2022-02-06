@@ -15,7 +15,7 @@
                     <option value="null" selected>Select</option>
                     <option v-for="district of formattedDistricts" :key="district.id" :value="district.id">{{ district.name }}</option>
                 </Select>
-                <Warning class="mt-4" v-show="this.districts.filter(district => district.name === 'Hampshire' && district.id === parseInt(form.district)).length === 1">If you have a Hampshire Scouts Microsoft account you should use that to <Link :href="route('sign-in')" class="font-bold hover:text-blue">Sign In</Link>. You do not need to register for an account.</Warning>
+                <Message class="mt-4" v-show="this.districts.filter(district => district.name === 'Hampshire' && district.id === parseInt(form.district)).length === 1">If you have a Hampshire Scouts Microsoft account you should use that to <Link :href="route('sign-in')" class="font-bold hover:text-blue">Sign In</Link>. You do not need to register for an account.</Message>
                 <ValidationErrors class="mt-4"></ValidationErrors>
                 <div class="mt-8 text-right w-full mb-6">
                     <Button class="inline bg-navy w-32 hover:bg-navy-darkened disabled:bg-navy-darkened" :disabled="form.processing" :loading="form.processing">Register</Button>
@@ -34,10 +34,10 @@ import Select from "@/Components/Forms/Select";
 import Button from "@/Components/Buttons/Button";
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import ValidationErrors from "@/Components/Forms/ValidationErrors";
-import Warning from "@/Components/Interface/Warning";
+import Message from "@/Components/Interface/Message";
 
 export default defineComponent({
-    components: {Warning, ValidationErrors, Button, Input, Select, Logo, Head, Link},
+    components: {Message, ValidationErrors, Button, Input, Select, Logo, Head, Link},
     layout: null,
 
     props: {

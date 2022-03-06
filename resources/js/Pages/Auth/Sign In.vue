@@ -10,7 +10,7 @@
                 <Input id="password" class="w-full" label="Password" type="password" v-model="form.password"
                        required autocomplete="current-password"/>
                 <ValidationErrors class="mt-4"></ValidationErrors>
-                <Message class="mt-4 bg-green font-bold p-4 text-white" icon="check-circle" v-if="$page.props.flash.event === 'password-reset'">
+                <Message class="mt-4 bg-green dark:bg-green-darkened font-bold p-4 text-white" icon="check-circle" v-if="$page.props.flash.event === 'password-reset'">
                     Your password has been reset
                 </Message>
                 <div class="ml-auto mt-8">

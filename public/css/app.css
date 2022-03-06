@@ -1485,6 +1485,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 109 223 / var(--tw-text-opacity));
 }
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 .focus\:z-10:focus {
   z-index: 10;
 }

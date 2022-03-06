@@ -20033,6 +20033,61 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Components_Logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Logo */ "./resources/js/Components/Logo.vue");
+/* harmony import */ var _Components_Forms_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Forms/Input */ "./resources/js/Components/Forms/Input.vue");
+/* harmony import */ var _Components_Buttons_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Buttons/Button */ "./resources/js/Components/Buttons/Button.vue");
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link,
+    Logo: _Components_Logo__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Input: _Components_Forms_Input__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Button: _Components_Buttons_Button__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  props: {
+    status: String
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        email: ''
+      }),
+      submitted: false
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      this.form.post(this.route('password.email'), {
+        onFinish: function onFinish() {
+          return _this.submitted = true;
+        }
+      });
+    }
+  }
+}));
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=script&lang=js ***!
@@ -20111,6 +20166,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Components_Logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Logo */ "./resources/js/Components/Logo.vue");
+/* harmony import */ var _Components_Forms_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Forms/Input */ "./resources/js/Components/Forms/Input.vue");
+/* harmony import */ var _Components_Buttons_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Buttons/Button */ "./resources/js/Components/Buttons/Button.vue");
+/* harmony import */ var _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Forms/ValidationErrors */ "./resources/js/Components/Forms/ValidationErrors.vue");
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link,
+    Logo: _Components_Logo__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Input: _Components_Forms_Input__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Button: _Components_Buttons_Button__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ValidationErrors: _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  props: {
+    email: String,
+    token: String
+  },
+  data: function data() {
+    return {
+      form: this.$inertia.form({
+        token: this.token,
+        email: this.email,
+        password: '',
+        password_confirmation: ''
+      })
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      this.form.post(this.route('password.update'), {
+        onFinish: function onFinish() {
+          return _this.form.reset('password', 'password_confirmation');
+        }
+      });
+    }
+  }
+}));
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Sign In.vue?vue&type=script&lang=js":
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Sign In.vue?vue&type=script&lang=js ***!
@@ -20128,11 +20244,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Forms/ValidationErrors */ "./resources/js/Components/Forms/ValidationErrors.vue");
 /* harmony import */ var _Components_Buttons_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Buttons/Button */ "./resources/js/Components/Buttons/Button.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Components_Interface_Message__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Interface/Message */ "./resources/js/Components/Interface/Message.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -20147,7 +20265,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     ValidationErrors: _Components_Forms_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__["default"],
     Logo: _Components_Logo__WEBPACK_IMPORTED_MODULE_1__["default"],
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.Head,
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.Link
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_5__.Link,
+    Message: _Components_Interface_Message__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   layout: null,
   data: function data() {
@@ -20168,7 +20287,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread(_objectSpread({}, data), {}, {
           remember: _this.form.remember ? 'on' : ''
         });
-      }).post(this.route('sign-in'), {
+      }).post(this.route('login'), {
         onFinish: function onFinish() {
           return _this.form.reset('password');
         }
@@ -21925,6 +22044,134 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8":
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "flex items-center justify-center w-screen h-full bg-gray-100 dark:bg-gray-800 p-4"
+};
+var _hoisted_2 = {
+  "class": "flex flex-col items-center w-full max-w-md bg-white dark:bg-black shadow-md px-8 sm:px-16 py-8"
+};
+var _hoisted_3 = {
+  key: 0,
+  "class": "w-full"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "mb-8 text-center"
+}, "If you have forgotten your password, enter your email address below to request a password reset.", -1
+/* HOISTED */
+);
+
+var _hoisted_5 = {
+  "class": "ml-auto"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Email Reset Link ");
+
+var _hoisted_7 = {
+  key: 1,
+  "class": "text-center"
+};
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "font-bold text-lg mb-2"
+}, "Password Reset Submitted", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Please open the email we just sent you for details on how to reset your password.", -1
+/* HOISTED */
+);
+
+var _hoisted_10 = [_hoisted_8, _hoisted_9];
+var _hoisted_11 = {
+  "class": "w-full text-center border-t mt-4 pt-4 border-gray-400 dark:border-gray-700"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Remembered your password? ");
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign In");
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+
+  var _component_Logo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Logo");
+
+  var _component_Input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Input");
+
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
+    title: "Sign In"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Logo, {
+    width: "w-40",
+    "class": "mb-8 max-h-20"
+  }), !this.submitted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "flex flex-col w-full"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Input, {
+    id: "email-address",
+    "class": "mb-8 w-full",
+    label: "Email Address",
+    type: "email",
+    modelValue: _ctx.form.email,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.form.email = $event;
+    }),
+    required: "",
+    autofocus: ""
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    "class": "inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-48",
+    disabled: _ctx.form.processing,
+    loading: _ctx.form.processing
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_6];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["disabled", "loading"])])], 32
+  /* HYDRATE_EVENTS */
+  )])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, _hoisted_10)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('login'),
+    "class": "font-bold hover:text-blue"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_13];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])])])])], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=template&id=e59c811e":
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=template&id=e59c811e ***!
@@ -22087,7 +22334,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-        href: _ctx.route('sign-in'),
+        href: _ctx.route('login'),
         "class": "font-bold hover:text-blue"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -22125,11 +22372,136 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , ["disabled", "loading"])])], 32
   /* HYDRATE_EVENTS */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: _ctx.route('sign-in'),
+    href: _ctx.route('login'),
     "class": "font-bold hover:text-blue"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_13];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])])])])], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "flex items-center justify-center w-screen h-full bg-gray-100 dark:bg-gray-800 p-4"
+};
+var _hoisted_2 = {
+  "class": "flex flex-col items-center w-full max-w-md bg-white dark:bg-black shadow-md px-8 sm:px-16 py-8"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "mb-8 text-center"
+}, "Thank you for verifying your email. Please enter your new password below. Once your password has been reset, you will be redirected to the sign in page.", -1
+/* HOISTED */
+);
+
+var _hoisted_4 = {
+  "class": "ml-auto mt-8"
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reset Password ");
+
+var _hoisted_6 = {
+  "class": "w-full text-center border-t mt-4 pt-4 border-gray-400 dark:border-gray-700"
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Remembered your password? ");
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign In");
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+
+  var _component_Logo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Logo");
+
+  var _component_Input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Input");
+
+  var _component_ValidationErrors = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ValidationErrors");
+
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
+    title: "Reset Password"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Logo, {
+    width: "w-40",
+    "class": "mb-8 max-h-20"
+  }), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "flex flex-col w-full"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Input, {
+    id: "password",
+    "class": "w-full mb-6",
+    label: "Password",
+    type: "password",
+    modelValue: _ctx.form.password,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.form.password = $event;
+    }),
+    required: "",
+    autocomplete: "new-password"
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Input, {
+    id: "password_confirmation",
+    "class": "w-full",
+    label: "Password Confirmation",
+    type: "password",
+    modelValue: _ctx.form.password_confirmation,
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.form.password_confirmation = $event;
+    }),
+    required: "",
+    autocomplete: "new-password"
+  }, null, 8
+  /* PROPS */
+  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ValidationErrors, {
+    "class": "mt-4"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    "class": "inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-48",
+    disabled: _ctx.form.processing,
+    loading: _ctx.form.processing
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_5];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["disabled", "loading"])])], 32
+  /* HYDRATE_EVENTS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('login'),
+    "class": "font-bold hover:text-blue"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_8];
     }),
     _: 1
     /* STABLE */
@@ -22162,23 +22534,22 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "flex flex-col items-center w-full max-w-md bg-white dark:bg-black shadow-md px-8 sm:px-16 py-8"
 };
-var _hoisted_3 = {
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your password has been reset ");
+
+var _hoisted_4 = {
   "class": "ml-auto mt-8"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "inline mr-4 hover:text-gray-700 dark:hover:text-gray-400 cursor-pointer text-sm"
-}, "Forgot password?", -1
-/* HOISTED */
-);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Forgot password?");
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign In ");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sign In ");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"my-6 py-4 w-full border-y border-gray-400 dark:border-gray-700 text-center\"><div class=\"cursor-pointer\"><svg class=\"hidden dark:inline\" xmlns=\"http://www.w3.org/2000/svg\" width=\"215\" height=\"41\" viewBox=\"0 0 215 41\"><title>MS-SymbolLockup</title><rect width=\"215\" height=\"41\" fill=\"#2f2f2f\"></rect><path d=\"M45.812,25.082V23.288a2.77,2.77,0,0,0,.573.4,4.484,4.484,0,0,0,.706.3,5.486,5.486,0,0,0,.745.187,3.954,3.954,0,0,0,.687.065,2.928,2.928,0,0,0,1.634-.365,1.2,1.2,0,0,0,.537-1.062,1.167,1.167,0,0,0-.178-.649,1.939,1.939,0,0,0-.5-.5,5.412,5.412,0,0,0-.757-.435q-.435-.209-.932-.436-.533-.285-.994-.578a4.285,4.285,0,0,1-.8-.648,2.724,2.724,0,0,1-.533-.8,2.6,2.6,0,0,1-.194-1.047,2.416,2.416,0,0,1,.333-1.285,2.794,2.794,0,0,1,.877-.9,4.019,4.019,0,0,1,1.239-.528,5.906,5.906,0,0,1,1.418-.172,5.692,5.692,0,0,1,2.4.374v1.721a3.817,3.817,0,0,0-2.295-.645,4.093,4.093,0,0,0-.771.074,2.335,2.335,0,0,0-.687.241,1.5,1.5,0,0,0-.494.433,1.06,1.06,0,0,0-.189.637,1.221,1.221,0,0,0,.145.608,1.573,1.573,0,0,0,.428.468,4.321,4.321,0,0,0,.688.414c.27.134.584.28.939.436q.548.285,1.034.6a4.881,4.881,0,0,1,.856.7,3.075,3.075,0,0,1,.585.846,2.493,2.493,0,0,1,.215,1.058,2.625,2.625,0,0,1-.322,1.348,2.584,2.584,0,0,1-.866.892,3.786,3.786,0,0,1-1.254.5,6.959,6.959,0,0,1-1.5.155c-.176,0-.392-.014-.647-.04s-.518-.067-.786-.117a7.75,7.75,0,0,1-.76-.187A2.373,2.373,0,0,1,45.812,25.082Z\" fill=\"#fff\"></path><path d=\"M55.109,16.426a1.021,1.021,0,0,1-.713-.272.891.891,0,0,1-.3-.688.917.917,0,0,1,.3-.7,1.009,1.009,0,0,1,.713-.278,1.041,1.041,0,0,1,.732.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.035,1.035,0,0,1,55.109,16.426ZM55.95,25.5h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M64.979,24.9q0,4.131-4.146,4.131a6.166,6.166,0,0,1-2.551-.491V26.986a4.712,4.712,0,0,0,2.332.7,2.341,2.341,0,0,0,2.668-2.628V24.24h-.029a2.938,2.938,0,0,1-4.733.436,4.046,4.046,0,0,1-.837-2.684,4.738,4.738,0,0,1,.9-3.04,2.988,2.988,0,0,1,2.471-1.128,2.38,2.38,0,0,1,2.2,1.216h.029V18h1.7ZM63.3,22.064v-.973a1.91,1.91,0,0,0-.523-1.352,1.71,1.71,0,0,0-1.3-.559,1.789,1.789,0,0,0-1.51.714,3.223,3.223,0,0,0-.545,2,2.78,2.78,0,0,0,.523,1.769,1.675,1.675,0,0,0,1.385.662,1.8,1.8,0,0,0,1.426-.632A2.4,2.4,0,0,0,63.3,22.064Z\" fill=\"#fff\"></path><path d=\"M73.853,25.5h-1.7V21.273q0-2.1-1.483-2.1a1.616,1.616,0,0,0-1.279.582,2.167,2.167,0,0,0-.505,1.469V25.5h-1.7V18h1.7v1.245h.029a2.669,2.669,0,0,1,2.428-1.421,2.257,2.257,0,0,1,1.863.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#fff\"></path><path d=\"M80.892,16.426a1.017,1.017,0,0,1-.713-.272.889.889,0,0,1-.3-.688.915.915,0,0,1,.3-.7,1,1,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,80.892,16.426Zm.84,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M90.614,25.5h-1.7V21.273q0-2.1-1.483-2.1a1.62,1.62,0,0,0-1.28.582,2.167,2.167,0,0,0-.5,1.469V25.5h-1.7V18h1.7v1.245h.03a2.668,2.668,0,0,1,2.427-1.421,2.258,2.258,0,0,1,1.864.795,3.576,3.576,0,0,1,.643,2.3Z\" fill=\"#fff\"></path><path d=\"M106.865,18l-2.208,7.5h-1.776l-1.36-5.083a3.291,3.291,0,0,1-.1-.659h-.029a3.018,3.018,0,0,1-.132.644l-1.477,5.1H98.042l-2.2-7.5H97.6l1.36,5.405a3.308,3.308,0,0,1,.087.645H99.1a3.384,3.384,0,0,1,.117-.659L100.725,18h1.593l1.345,5.428a3.832,3.832,0,0,1,.095.644h.052a3.3,3.3,0,0,1,.109-.644L105.249,18Z\" fill=\"#fff\"></path><path d=\"M108.977,16.426a1.017,1.017,0,0,1-.713-.272.889.889,0,0,1-.3-.688.915.915,0,0,1,.3-.7,1,1,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,108.977,16.426Zm.84,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M115.979,25.42a2.944,2.944,0,0,1-1.307.248q-2.18,0-2.179-2.094V19.333h-1.25V18h1.25V16.264l1.7-.483V18h1.79v1.333h-1.79v3.75a1.478,1.478,0,0,0,.242.952,1,1,0,0,0,.8.285,1.16,1.16,0,0,0,.745-.248Z\" fill=\"#fff\"></path><path d=\"M124.094,25.5h-1.7V21.4q0-2.226-1.483-2.226a1.555,1.555,0,0,0-1.258.644,2.573,2.573,0,0,0-.511,1.649V25.5h-1.7V14.4h1.7v4.849h.029a2.679,2.679,0,0,1,2.428-1.421q2.492,0,2.492,3.055Z\" fill=\"#fff\"></path><path d=\"M141.719,25.5h-1.726V18.7q0-.835.1-2.043h-.03a6.992,6.992,0,0,1-.285.988L136.652,25.5h-1.2l-3.136-7.793a7.371,7.371,0,0,1-.277-1.047h-.029q.059.63.058,2.058V25.5h-1.608V15h2.449l2.756,7a10.415,10.415,0,0,1,.409,1.2h.036c.181-.551.327-.962.439-1.23L139.357,15h2.362Z\" fill=\"#fff\"></path><path d=\"M144.964,16.426a1.019,1.019,0,0,1-.713-.272.892.892,0,0,1-.3-.688.918.918,0,0,1,.3-.7,1.007,1.007,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.911.911,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,144.964,16.426Zm.841,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M153.378,25.156a4.185,4.185,0,0,1-2.127.52,3.6,3.6,0,0,1-2.69-1.044,3.7,3.7,0,0,1-1.024-2.706,4.074,4.074,0,0,1,1.1-2.978,3.93,3.93,0,0,1,2.942-1.124,4.281,4.281,0,0,1,1.806.36v1.582a2.73,2.73,0,0,0-1.667-.586,2.312,2.312,0,0,0-1.762.728,2.669,2.669,0,0,0-.687,1.908,2.54,2.54,0,0,0,.647,1.838,2.291,2.291,0,0,0,1.736.674,2.708,2.708,0,0,0,1.725-.652Z\" fill=\"#fff\"></path><path d=\"M159.4,19.619a1.4,1.4,0,0,0-.884-.242,1.514,1.514,0,0,0-1.258.682,3.047,3.047,0,0,0-.5,1.852V25.5h-1.7V18h1.7v1.545h.029a2.6,2.6,0,0,1,.764-1.233,1.72,1.72,0,0,1,1.151-.444,1.425,1.425,0,0,1,.7.14Z\" fill=\"#fff\"></path><path d=\"M163.788,25.676a3.71,3.71,0,0,1-2.767-1.051,3.8,3.8,0,0,1-1.035-2.787,3.7,3.7,0,0,1,3.985-4.014,3.581,3.581,0,0,1,2.733,1.033,3.994,3.994,0,0,1,.98,2.864,3.938,3.938,0,0,1-1.056,2.875A3.8,3.8,0,0,1,163.788,25.676Zm.08-6.5a1.932,1.932,0,0,0-1.571.7,2.913,2.913,0,0,0-.578,1.919,2.744,2.744,0,0,0,.585,1.856,1.957,1.957,0,0,0,1.564.678,1.862,1.862,0,0,0,1.539-.666,2.95,2.95,0,0,0,.537-1.9,2.99,2.99,0,0,0-.537-1.911A1.851,1.851,0,0,0,163.868,19.18Z\" fill=\"#fff\"></path><path d=\"M168.94,25.266V23.691a3.383,3.383,0,0,0,2.1.725q1.535,0,1.535-.908a.714.714,0,0,0-.132-.436,1.263,1.263,0,0,0-.354-.318,2.864,2.864,0,0,0-.526-.25c-.2-.072-.428-.155-.677-.248a7.074,7.074,0,0,1-.829-.389,2.526,2.526,0,0,1-.615-.465,1.758,1.758,0,0,1-.369-.59,2.168,2.168,0,0,1-.124-.769,1.775,1.775,0,0,1,.256-.955,2.224,2.224,0,0,1,.687-.7,3.294,3.294,0,0,1,.979-.425A4.49,4.49,0,0,1,172,17.824a5.163,5.163,0,0,1,1.856.315v1.487a3.127,3.127,0,0,0-1.812-.542,2.323,2.323,0,0,0-.582.066,1.477,1.477,0,0,0-.442.183.893.893,0,0,0-.285.282.677.677,0,0,0-.1.363.779.779,0,0,0,.1.41.936.936,0,0,0,.3.3,2.675,2.675,0,0,0,.482.234q.282.105.648.23a9.5,9.5,0,0,1,.866.4,2.872,2.872,0,0,1,.654.465,1.789,1.789,0,0,1,.416.6,2.034,2.034,0,0,1,.147.81,1.855,1.855,0,0,1-.263,1,2.212,2.212,0,0,1-.7.7,3.28,3.28,0,0,1-1.013.413,5.2,5.2,0,0,1-1.209.136A5.1,5.1,0,0,1,168.94,25.266Z\" fill=\"#fff\"></path><path d=\"M179.183,25.676a3.711,3.711,0,0,1-2.768-1.051,3.8,3.8,0,0,1-1.034-2.787,3.7,3.7,0,0,1,3.984-4.014,3.585,3.585,0,0,1,2.734,1.033,3.993,3.993,0,0,1,.979,2.864,3.934,3.934,0,0,1-1.056,2.875A3.794,3.794,0,0,1,179.183,25.676Zm.08-6.5a1.934,1.934,0,0,0-1.572.7,2.919,2.919,0,0,0-.578,1.919,2.749,2.749,0,0,0,.585,1.856,1.959,1.959,0,0,0,1.565.678,1.864,1.864,0,0,0,1.539-.666,2.956,2.956,0,0,0,.537-1.9,3,3,0,0,0-.537-1.911A1.852,1.852,0,0,0,179.263,19.18Z\" fill=\"#fff\"></path><path d=\"M188.787,15.781a1.523,1.523,0,0,0-.782-.2q-1.235,0-1.235,1.4V18h1.74v1.333h-1.733V25.5h-1.7V19.333H183.8V18h1.279V16.784a2.37,2.37,0,0,1,.775-1.871,2.817,2.817,0,0,1,1.937-.684,2.866,2.866,0,0,1,.994.138Z\" fill=\"#fff\"></path><path d=\"M193.94,25.42a2.944,2.944,0,0,1-1.307.248q-2.179,0-2.179-2.094V19.333H189.2V18h1.25V16.264l1.7-.483V18h1.79v1.333h-1.79v3.75a1.472,1.472,0,0,0,.242.952,1,1,0,0,0,.8.285,1.162,1.162,0,0,0,.745-.248Z\" fill=\"#fff\"></path><rect x=\"13\" y=\"11\" width=\"9\" height=\"9\" fill=\"#f25022\"></rect><rect x=\"13\" y=\"21\" width=\"9\" height=\"9\" fill=\"#00a4ef\"></rect><rect x=\"23\" y=\"11\" width=\"9\" height=\"9\" fill=\"#7fba00\"></rect><rect x=\"23\" y=\"21\" width=\"9\" height=\"9\" fill=\"#ffb900\"></rect></svg><svg class=\"inline dark:hidden\" xmlns=\"http://www.w3.org/2000/svg\" width=\"215\" height=\"41\" viewBox=\"0 0 215 41\"><title>MS-SymbolLockup</title><rect width=\"215\" height=\"41\" fill=\"#fff\"></rect><path d=\"M214,1V40H1V1H214m1-1H0V41H215V0Z\" fill=\"#8c8c8c\"></path><path d=\"M45.812,25.082V23.288a2.849,2.849,0,0,0,.576.4,4.5,4.5,0,0,0,.707.3,5.513,5.513,0,0,0,.747.187,3.965,3.965,0,0,0,.688.065,2.937,2.937,0,0,0,1.637-.365,1.2,1.2,0,0,0,.538-1.062,1.16,1.16,0,0,0-.179-.649,1.928,1.928,0,0,0-.5-.5,5.355,5.355,0,0,0-.757-.435q-.437-.209-.935-.436c-.356-.19-.687-.383-1-.578a4.358,4.358,0,0,1-.8-.648,2.728,2.728,0,0,1-.534-.8,2.6,2.6,0,0,1-.194-1.047,2.416,2.416,0,0,1,.333-1.285,2.811,2.811,0,0,1,.879-.9,4.026,4.026,0,0,1,1.242-.528,5.922,5.922,0,0,1,1.42-.172,5.715,5.715,0,0,1,2.4.374v1.721a3.832,3.832,0,0,0-2.3-.645,4.106,4.106,0,0,0-.773.074,2.348,2.348,0,0,0-.689.241,1.5,1.5,0,0,0-.494.433,1.054,1.054,0,0,0-.19.637,1.211,1.211,0,0,0,.146.608,1.551,1.551,0,0,0,.429.468,4.276,4.276,0,0,0,.688.414c.271.134.584.28.942.436q.547.285,1.036.6a4.881,4.881,0,0,1,.856.7,3.015,3.015,0,0,1,.586.846,2.464,2.464,0,0,1,.217,1.058,2.635,2.635,0,0,1-.322,1.348,2.608,2.608,0,0,1-.868.892,3.82,3.82,0,0,1-1.257.5,6.988,6.988,0,0,1-1.5.155c-.176,0-.392-.014-.649-.04s-.518-.067-.787-.117a7.772,7.772,0,0,1-.761-.187A2.4,2.4,0,0,1,45.812,25.082Z\" fill=\"#5e5e5e\"></path><path d=\"M55.129,16.426a1.02,1.02,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.008,1.008,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.909.909,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,55.129,16.426Zm.842,9.074h-1.7V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M65.017,24.9q0,4.131-4.153,4.131a6.187,6.187,0,0,1-2.556-.491V26.986a4.726,4.726,0,0,0,2.337.7,2.342,2.342,0,0,0,2.672-2.628V24.24h-.029a2.947,2.947,0,0,1-4.742.436,4.041,4.041,0,0,1-.838-2.684,4.738,4.738,0,0,1,.9-3.04,3,3,0,0,1,2.476-1.128,2.384,2.384,0,0,1,2.2,1.216h.029V18h1.7Zm-1.684-2.835v-.973a1.91,1.91,0,0,0-.524-1.352A1.718,1.718,0,0,0,61.5,19.18a1.793,1.793,0,0,0-1.512.714,3.217,3.217,0,0,0-.546,2,2.774,2.774,0,0,0,.524,1.769,1.678,1.678,0,0,0,1.387.662,1.805,1.805,0,0,0,1.429-.632A2.391,2.391,0,0,0,63.333,22.064Z\" fill=\"#5e5e5e\"></path><path d=\"M73.908,25.5h-1.7V21.273q0-2.1-1.486-2.1a1.622,1.622,0,0,0-1.282.582,2.162,2.162,0,0,0-.5,1.469V25.5H67.229V18h1.707v1.245h.029A2.673,2.673,0,0,1,71.4,17.824a2.265,2.265,0,0,1,1.868.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#5e5e5e\"></path><path d=\"M80.962,16.426a1.02,1.02,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.008,1.008,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.909.909,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,80.962,16.426ZM81.8,25.5H80.1V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M90.7,25.5H89V21.273q0-2.1-1.486-2.1a1.622,1.622,0,0,0-1.282.582,2.157,2.157,0,0,0-.506,1.469V25.5H84.023V18H85.73v1.245h.03a2.673,2.673,0,0,1,2.431-1.421,2.265,2.265,0,0,1,1.868.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#5e5e5e\"></path><path d=\"M106.984,18l-2.212,7.5h-1.78l-1.361-5.083a3.215,3.215,0,0,1-.1-.659H101.5a3.069,3.069,0,0,1-.131.644l-1.48,5.1H98.145L95.939,18H97.7l1.363,5.405a3.16,3.16,0,0,1,.087.645H99.2a3.384,3.384,0,0,1,.117-.659L100.832,18h1.6l1.347,5.428a3.732,3.732,0,0,1,.095.644h.052a3.387,3.387,0,0,1,.11-.644L105.365,18Z\" fill=\"#5e5e5e\"></path><path d=\"M109.1,16.426a1.018,1.018,0,0,1-.714-.272.886.886,0,0,1-.3-.688.912.912,0,0,1,.3-.7,1.006,1.006,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.912.912,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,109.1,16.426Zm.841,9.074h-1.7V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M116.117,25.42a2.955,2.955,0,0,1-1.31.248q-2.182,0-2.183-2.094V19.333h-1.253V18h1.253V16.264l1.7-.483V18h1.794v1.333h-1.794v3.75a1.484,1.484,0,0,0,.241.952,1.006,1.006,0,0,0,.807.285,1.167,1.167,0,0,0,.746-.248Z\" fill=\"#5e5e5e\"></path><path d=\"M124.248,25.5h-1.7V21.4q0-2.226-1.487-2.226a1.556,1.556,0,0,0-1.26.644,2.568,2.568,0,0,0-.513,1.649V25.5h-1.707V14.4h1.707v4.849h.029a2.685,2.685,0,0,1,2.432-1.421q2.5,0,2.5,3.055Z\" fill=\"#5e5e5e\"></path><path d=\"M141.907,25.5h-1.728V18.7q0-.835.1-2.043h-.029a6.992,6.992,0,0,1-.285.988L136.831,25.5h-1.2l-3.143-7.793a7.236,7.236,0,0,1-.277-1.047h-.029q.057.63.058,2.058V25.5h-1.611V15h2.453l2.762,7a10.884,10.884,0,0,1,.41,1.2h.036c.181-.551.327-.962.44-1.23L139.541,15h2.366Z\" fill=\"#5e5e5e\"></path><path d=\"M145.158,16.426a1.022,1.022,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.009,1.009,0,0,1,.714-.278,1.043,1.043,0,0,1,.733.278.911.911,0,0,1,.3.7.9.9,0,0,1-.3.678A1.038,1.038,0,0,1,145.158,16.426ZM146,25.5h-1.7V18H146Z\" fill=\"#5e5e5e\"></path><path d=\"M153.589,25.156a4.2,4.2,0,0,1-2.131.52,3.606,3.606,0,0,1-2.695-1.044,3.691,3.691,0,0,1-1.026-2.706,4.07,4.07,0,0,1,1.1-2.978,3.944,3.944,0,0,1,2.948-1.124,4.3,4.3,0,0,1,1.81.36v1.582a2.743,2.743,0,0,0-1.67-.586,2.32,2.32,0,0,0-1.766.728,2.665,2.665,0,0,0-.688,1.908,2.536,2.536,0,0,0,.648,1.838,2.3,2.3,0,0,0,1.739.674,2.716,2.716,0,0,0,1.729-.652Z\" fill=\"#5e5e5e\"></path><path d=\"M159.625,19.619a1.4,1.4,0,0,0-.887-.242,1.513,1.513,0,0,0-1.259.682,3.04,3.04,0,0,0-.506,1.852V25.5h-1.7V18h1.7v1.545H157a2.606,2.606,0,0,1,.766-1.233,1.724,1.724,0,0,1,1.154-.444,1.432,1.432,0,0,1,.7.14Z\" fill=\"#5e5e5e\"></path><path d=\"M164.02,25.676a3.719,3.719,0,0,1-2.773-1.051,3.8,3.8,0,0,1-1.036-2.787,3.7,3.7,0,0,1,3.991-4.014,3.6,3.6,0,0,1,2.739,1.033,3.986,3.986,0,0,1,.982,2.864,3.932,3.932,0,0,1-1.059,2.875A3.8,3.8,0,0,1,164.02,25.676Zm.08-6.5a1.938,1.938,0,0,0-1.575.7,2.913,2.913,0,0,0-.579,1.919,2.744,2.744,0,0,0,.586,1.856,1.965,1.965,0,0,0,1.568.678,1.87,1.87,0,0,0,1.542-.666,2.956,2.956,0,0,0,.538-1.9,3,3,0,0,0-.538-1.911A1.858,1.858,0,0,0,164.1,19.18Z\" fill=\"#5e5e5e\"></path><path d=\"M169.182,25.266V23.691a3.392,3.392,0,0,0,2.1.725q1.539,0,1.538-.908a.714.714,0,0,0-.132-.436,1.241,1.241,0,0,0-.355-.318,2.784,2.784,0,0,0-.527-.25q-.3-.108-.677-.248a7.052,7.052,0,0,1-.832-.389,2.545,2.545,0,0,1-.615-.465,1.745,1.745,0,0,1-.37-.59,2.145,2.145,0,0,1-.125-.769,1.775,1.775,0,0,1,.256-.955,2.223,2.223,0,0,1,.69-.7,3.289,3.289,0,0,1,.98-.425,4.511,4.511,0,0,1,1.136-.143,5.181,5.181,0,0,1,1.86.315v1.487a3.136,3.136,0,0,0-1.816-.542,2.317,2.317,0,0,0-.582.066,1.472,1.472,0,0,0-.443.183.886.886,0,0,0-.286.282.669.669,0,0,0-.1.363.77.77,0,0,0,.1.41.93.93,0,0,0,.3.3,2.654,2.654,0,0,0,.483.234q.282.105.649.23a9.4,9.4,0,0,1,.867.4,2.886,2.886,0,0,1,.656.465,1.806,1.806,0,0,1,.417.6,2.034,2.034,0,0,1,.147.81,1.847,1.847,0,0,1-.264,1,2.205,2.205,0,0,1-.7.7,3.292,3.292,0,0,1-1.015.413,5.222,5.222,0,0,1-1.212.136A5.115,5.115,0,0,1,169.182,25.266Z\" fill=\"#5e5e5e\"></path><path d=\"M179.443,25.676a3.717,3.717,0,0,1-2.772-1.051,3.793,3.793,0,0,1-1.036-2.787,3.7,3.7,0,0,1,3.991-4.014,3.6,3.6,0,0,1,2.739,1.033,3.986,3.986,0,0,1,.982,2.864,3.932,3.932,0,0,1-1.059,2.875A3.8,3.8,0,0,1,179.443,25.676Zm.08-6.5a1.936,1.936,0,0,0-1.574.7,2.908,2.908,0,0,0-.579,1.919,2.739,2.739,0,0,0,.586,1.856,1.964,1.964,0,0,0,1.567.678,1.868,1.868,0,0,0,1.542-.666,2.95,2.95,0,0,0,.539-1.9,2.99,2.99,0,0,0-.539-1.911A1.857,1.857,0,0,0,179.523,19.18Z\" fill=\"#5e5e5e\"></path><path d=\"M189.067,15.781a1.533,1.533,0,0,0-.784-.2q-1.237,0-1.237,1.4V18h1.743v1.333h-1.736V25.5h-1.7V19.333h-1.282V18h1.282V16.784a2.362,2.362,0,0,1,.777-1.871,2.82,2.82,0,0,1,1.94-.684,2.879,2.879,0,0,1,1,.138Z\" fill=\"#5e5e5e\"></path><path d=\"M194.23,25.42a2.955,2.955,0,0,1-1.31.248q-2.182,0-2.183-2.094V19.333h-1.253V18h1.253V16.264l1.7-.483V18h1.793v1.333h-1.793v3.75a1.484,1.484,0,0,0,.241.952,1,1,0,0,0,.806.285,1.165,1.165,0,0,0,.746-.248Z\" fill=\"#5e5e5e\"></path><rect x=\"13\" y=\"11\" width=\"9\" height=\"9\" fill=\"#f25022\"></rect><rect x=\"13\" y=\"21\" width=\"9\" height=\"9\" fill=\"#00a4ef\"></rect><rect x=\"23\" y=\"11\" width=\"9\" height=\"9\" fill=\"#7fba00\"></rect><rect x=\"23\" y=\"21\" width=\"9\" height=\"9\" fill=\"#ffb900\"></rect></svg></div><p class=\"mt-2 text-sm\">Use your Hampshire Scouts account</p></div>", 1);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"my-6 py-4 w-full border-y border-gray-400 dark:border-gray-700 text-center\"><div class=\"cursor-pointer\"><svg class=\"hidden dark:inline\" xmlns=\"http://www.w3.org/2000/svg\" width=\"215\" height=\"41\" viewBox=\"0 0 215 41\"><title>MS-SymbolLockup</title><rect width=\"215\" height=\"41\" fill=\"#2f2f2f\"></rect><path d=\"M45.812,25.082V23.288a2.77,2.77,0,0,0,.573.4,4.484,4.484,0,0,0,.706.3,5.486,5.486,0,0,0,.745.187,3.954,3.954,0,0,0,.687.065,2.928,2.928,0,0,0,1.634-.365,1.2,1.2,0,0,0,.537-1.062,1.167,1.167,0,0,0-.178-.649,1.939,1.939,0,0,0-.5-.5,5.412,5.412,0,0,0-.757-.435q-.435-.209-.932-.436-.533-.285-.994-.578a4.285,4.285,0,0,1-.8-.648,2.724,2.724,0,0,1-.533-.8,2.6,2.6,0,0,1-.194-1.047,2.416,2.416,0,0,1,.333-1.285,2.794,2.794,0,0,1,.877-.9,4.019,4.019,0,0,1,1.239-.528,5.906,5.906,0,0,1,1.418-.172,5.692,5.692,0,0,1,2.4.374v1.721a3.817,3.817,0,0,0-2.295-.645,4.093,4.093,0,0,0-.771.074,2.335,2.335,0,0,0-.687.241,1.5,1.5,0,0,0-.494.433,1.06,1.06,0,0,0-.189.637,1.221,1.221,0,0,0,.145.608,1.573,1.573,0,0,0,.428.468,4.321,4.321,0,0,0,.688.414c.27.134.584.28.939.436q.548.285,1.034.6a4.881,4.881,0,0,1,.856.7,3.075,3.075,0,0,1,.585.846,2.493,2.493,0,0,1,.215,1.058,2.625,2.625,0,0,1-.322,1.348,2.584,2.584,0,0,1-.866.892,3.786,3.786,0,0,1-1.254.5,6.959,6.959,0,0,1-1.5.155c-.176,0-.392-.014-.647-.04s-.518-.067-.786-.117a7.75,7.75,0,0,1-.76-.187A2.373,2.373,0,0,1,45.812,25.082Z\" fill=\"#fff\"></path><path d=\"M55.109,16.426a1.021,1.021,0,0,1-.713-.272.891.891,0,0,1-.3-.688.917.917,0,0,1,.3-.7,1.009,1.009,0,0,1,.713-.278,1.041,1.041,0,0,1,.732.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.035,1.035,0,0,1,55.109,16.426ZM55.95,25.5h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M64.979,24.9q0,4.131-4.146,4.131a6.166,6.166,0,0,1-2.551-.491V26.986a4.712,4.712,0,0,0,2.332.7,2.341,2.341,0,0,0,2.668-2.628V24.24h-.029a2.938,2.938,0,0,1-4.733.436,4.046,4.046,0,0,1-.837-2.684,4.738,4.738,0,0,1,.9-3.04,2.988,2.988,0,0,1,2.471-1.128,2.38,2.38,0,0,1,2.2,1.216h.029V18h1.7ZM63.3,22.064v-.973a1.91,1.91,0,0,0-.523-1.352,1.71,1.71,0,0,0-1.3-.559,1.789,1.789,0,0,0-1.51.714,3.223,3.223,0,0,0-.545,2,2.78,2.78,0,0,0,.523,1.769,1.675,1.675,0,0,0,1.385.662,1.8,1.8,0,0,0,1.426-.632A2.4,2.4,0,0,0,63.3,22.064Z\" fill=\"#fff\"></path><path d=\"M73.853,25.5h-1.7V21.273q0-2.1-1.483-2.1a1.616,1.616,0,0,0-1.279.582,2.167,2.167,0,0,0-.505,1.469V25.5h-1.7V18h1.7v1.245h.029a2.669,2.669,0,0,1,2.428-1.421,2.257,2.257,0,0,1,1.863.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#fff\"></path><path d=\"M80.892,16.426a1.017,1.017,0,0,1-.713-.272.889.889,0,0,1-.3-.688.915.915,0,0,1,.3-.7,1,1,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,80.892,16.426Zm.84,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M90.614,25.5h-1.7V21.273q0-2.1-1.483-2.1a1.62,1.62,0,0,0-1.28.582,2.167,2.167,0,0,0-.5,1.469V25.5h-1.7V18h1.7v1.245h.03a2.668,2.668,0,0,1,2.427-1.421,2.258,2.258,0,0,1,1.864.795,3.576,3.576,0,0,1,.643,2.3Z\" fill=\"#fff\"></path><path d=\"M106.865,18l-2.208,7.5h-1.776l-1.36-5.083a3.291,3.291,0,0,1-.1-.659h-.029a3.018,3.018,0,0,1-.132.644l-1.477,5.1H98.042l-2.2-7.5H97.6l1.36,5.405a3.308,3.308,0,0,1,.087.645H99.1a3.384,3.384,0,0,1,.117-.659L100.725,18h1.593l1.345,5.428a3.832,3.832,0,0,1,.095.644h.052a3.3,3.3,0,0,1,.109-.644L105.249,18Z\" fill=\"#fff\"></path><path d=\"M108.977,16.426a1.017,1.017,0,0,1-.713-.272.889.889,0,0,1-.3-.688.915.915,0,0,1,.3-.7,1,1,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.915.915,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,108.977,16.426Zm.84,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M115.979,25.42a2.944,2.944,0,0,1-1.307.248q-2.18,0-2.179-2.094V19.333h-1.25V18h1.25V16.264l1.7-.483V18h1.79v1.333h-1.79v3.75a1.478,1.478,0,0,0,.242.952,1,1,0,0,0,.8.285,1.16,1.16,0,0,0,.745-.248Z\" fill=\"#fff\"></path><path d=\"M124.094,25.5h-1.7V21.4q0-2.226-1.483-2.226a1.555,1.555,0,0,0-1.258.644,2.573,2.573,0,0,0-.511,1.649V25.5h-1.7V14.4h1.7v4.849h.029a2.679,2.679,0,0,1,2.428-1.421q2.492,0,2.492,3.055Z\" fill=\"#fff\"></path><path d=\"M141.719,25.5h-1.726V18.7q0-.835.1-2.043h-.03a6.992,6.992,0,0,1-.285.988L136.652,25.5h-1.2l-3.136-7.793a7.371,7.371,0,0,1-.277-1.047h-.029q.059.63.058,2.058V25.5h-1.608V15h2.449l2.756,7a10.415,10.415,0,0,1,.409,1.2h.036c.181-.551.327-.962.439-1.23L139.357,15h2.362Z\" fill=\"#fff\"></path><path d=\"M144.964,16.426a1.019,1.019,0,0,1-.713-.272.892.892,0,0,1-.3-.688.918.918,0,0,1,.3-.7,1.007,1.007,0,0,1,.713-.278,1.038,1.038,0,0,1,.731.278.911.911,0,0,1,.3.7.9.9,0,0,1-.3.678A1.033,1.033,0,0,1,144.964,16.426Zm.841,9.074h-1.7V18h1.7Z\" fill=\"#fff\"></path><path d=\"M153.378,25.156a4.185,4.185,0,0,1-2.127.52,3.6,3.6,0,0,1-2.69-1.044,3.7,3.7,0,0,1-1.024-2.706,4.074,4.074,0,0,1,1.1-2.978,3.93,3.93,0,0,1,2.942-1.124,4.281,4.281,0,0,1,1.806.36v1.582a2.73,2.73,0,0,0-1.667-.586,2.312,2.312,0,0,0-1.762.728,2.669,2.669,0,0,0-.687,1.908,2.54,2.54,0,0,0,.647,1.838,2.291,2.291,0,0,0,1.736.674,2.708,2.708,0,0,0,1.725-.652Z\" fill=\"#fff\"></path><path d=\"M159.4,19.619a1.4,1.4,0,0,0-.884-.242,1.514,1.514,0,0,0-1.258.682,3.047,3.047,0,0,0-.5,1.852V25.5h-1.7V18h1.7v1.545h.029a2.6,2.6,0,0,1,.764-1.233,1.72,1.72,0,0,1,1.151-.444,1.425,1.425,0,0,1,.7.14Z\" fill=\"#fff\"></path><path d=\"M163.788,25.676a3.71,3.71,0,0,1-2.767-1.051,3.8,3.8,0,0,1-1.035-2.787,3.7,3.7,0,0,1,3.985-4.014,3.581,3.581,0,0,1,2.733,1.033,3.994,3.994,0,0,1,.98,2.864,3.938,3.938,0,0,1-1.056,2.875A3.8,3.8,0,0,1,163.788,25.676Zm.08-6.5a1.932,1.932,0,0,0-1.571.7,2.913,2.913,0,0,0-.578,1.919,2.744,2.744,0,0,0,.585,1.856,1.957,1.957,0,0,0,1.564.678,1.862,1.862,0,0,0,1.539-.666,2.95,2.95,0,0,0,.537-1.9,2.99,2.99,0,0,0-.537-1.911A1.851,1.851,0,0,0,163.868,19.18Z\" fill=\"#fff\"></path><path d=\"M168.94,25.266V23.691a3.383,3.383,0,0,0,2.1.725q1.535,0,1.535-.908a.714.714,0,0,0-.132-.436,1.263,1.263,0,0,0-.354-.318,2.864,2.864,0,0,0-.526-.25c-.2-.072-.428-.155-.677-.248a7.074,7.074,0,0,1-.829-.389,2.526,2.526,0,0,1-.615-.465,1.758,1.758,0,0,1-.369-.59,2.168,2.168,0,0,1-.124-.769,1.775,1.775,0,0,1,.256-.955,2.224,2.224,0,0,1,.687-.7,3.294,3.294,0,0,1,.979-.425A4.49,4.49,0,0,1,172,17.824a5.163,5.163,0,0,1,1.856.315v1.487a3.127,3.127,0,0,0-1.812-.542,2.323,2.323,0,0,0-.582.066,1.477,1.477,0,0,0-.442.183.893.893,0,0,0-.285.282.677.677,0,0,0-.1.363.779.779,0,0,0,.1.41.936.936,0,0,0,.3.3,2.675,2.675,0,0,0,.482.234q.282.105.648.23a9.5,9.5,0,0,1,.866.4,2.872,2.872,0,0,1,.654.465,1.789,1.789,0,0,1,.416.6,2.034,2.034,0,0,1,.147.81,1.855,1.855,0,0,1-.263,1,2.212,2.212,0,0,1-.7.7,3.28,3.28,0,0,1-1.013.413,5.2,5.2,0,0,1-1.209.136A5.1,5.1,0,0,1,168.94,25.266Z\" fill=\"#fff\"></path><path d=\"M179.183,25.676a3.711,3.711,0,0,1-2.768-1.051,3.8,3.8,0,0,1-1.034-2.787,3.7,3.7,0,0,1,3.984-4.014,3.585,3.585,0,0,1,2.734,1.033,3.993,3.993,0,0,1,.979,2.864,3.934,3.934,0,0,1-1.056,2.875A3.794,3.794,0,0,1,179.183,25.676Zm.08-6.5a1.934,1.934,0,0,0-1.572.7,2.919,2.919,0,0,0-.578,1.919,2.749,2.749,0,0,0,.585,1.856,1.959,1.959,0,0,0,1.565.678,1.864,1.864,0,0,0,1.539-.666,2.956,2.956,0,0,0,.537-1.9,3,3,0,0,0-.537-1.911A1.852,1.852,0,0,0,179.263,19.18Z\" fill=\"#fff\"></path><path d=\"M188.787,15.781a1.523,1.523,0,0,0-.782-.2q-1.235,0-1.235,1.4V18h1.74v1.333h-1.733V25.5h-1.7V19.333H183.8V18h1.279V16.784a2.37,2.37,0,0,1,.775-1.871,2.817,2.817,0,0,1,1.937-.684,2.866,2.866,0,0,1,.994.138Z\" fill=\"#fff\"></path><path d=\"M193.94,25.42a2.944,2.944,0,0,1-1.307.248q-2.179,0-2.179-2.094V19.333H189.2V18h1.25V16.264l1.7-.483V18h1.79v1.333h-1.79v3.75a1.472,1.472,0,0,0,.242.952,1,1,0,0,0,.8.285,1.162,1.162,0,0,0,.745-.248Z\" fill=\"#fff\"></path><rect x=\"13\" y=\"11\" width=\"9\" height=\"9\" fill=\"#f25022\"></rect><rect x=\"13\" y=\"21\" width=\"9\" height=\"9\" fill=\"#00a4ef\"></rect><rect x=\"23\" y=\"11\" width=\"9\" height=\"9\" fill=\"#7fba00\"></rect><rect x=\"23\" y=\"21\" width=\"9\" height=\"9\" fill=\"#ffb900\"></rect></svg><svg class=\"inline dark:hidden\" xmlns=\"http://www.w3.org/2000/svg\" width=\"215\" height=\"41\" viewBox=\"0 0 215 41\"><title>MS-SymbolLockup</title><rect width=\"215\" height=\"41\" fill=\"#fff\"></rect><path d=\"M214,1V40H1V1H214m1-1H0V41H215V0Z\" fill=\"#8c8c8c\"></path><path d=\"M45.812,25.082V23.288a2.849,2.849,0,0,0,.576.4,4.5,4.5,0,0,0,.707.3,5.513,5.513,0,0,0,.747.187,3.965,3.965,0,0,0,.688.065,2.937,2.937,0,0,0,1.637-.365,1.2,1.2,0,0,0,.538-1.062,1.16,1.16,0,0,0-.179-.649,1.928,1.928,0,0,0-.5-.5,5.355,5.355,0,0,0-.757-.435q-.437-.209-.935-.436c-.356-.19-.687-.383-1-.578a4.358,4.358,0,0,1-.8-.648,2.728,2.728,0,0,1-.534-.8,2.6,2.6,0,0,1-.194-1.047,2.416,2.416,0,0,1,.333-1.285,2.811,2.811,0,0,1,.879-.9,4.026,4.026,0,0,1,1.242-.528,5.922,5.922,0,0,1,1.42-.172,5.715,5.715,0,0,1,2.4.374v1.721a3.832,3.832,0,0,0-2.3-.645,4.106,4.106,0,0,0-.773.074,2.348,2.348,0,0,0-.689.241,1.5,1.5,0,0,0-.494.433,1.054,1.054,0,0,0-.19.637,1.211,1.211,0,0,0,.146.608,1.551,1.551,0,0,0,.429.468,4.276,4.276,0,0,0,.688.414c.271.134.584.28.942.436q.547.285,1.036.6a4.881,4.881,0,0,1,.856.7,3.015,3.015,0,0,1,.586.846,2.464,2.464,0,0,1,.217,1.058,2.635,2.635,0,0,1-.322,1.348,2.608,2.608,0,0,1-.868.892,3.82,3.82,0,0,1-1.257.5,6.988,6.988,0,0,1-1.5.155c-.176,0-.392-.014-.649-.04s-.518-.067-.787-.117a7.772,7.772,0,0,1-.761-.187A2.4,2.4,0,0,1,45.812,25.082Z\" fill=\"#5e5e5e\"></path><path d=\"M55.129,16.426a1.02,1.02,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.008,1.008,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.909.909,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,55.129,16.426Zm.842,9.074h-1.7V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M65.017,24.9q0,4.131-4.153,4.131a6.187,6.187,0,0,1-2.556-.491V26.986a4.726,4.726,0,0,0,2.337.7,2.342,2.342,0,0,0,2.672-2.628V24.24h-.029a2.947,2.947,0,0,1-4.742.436,4.041,4.041,0,0,1-.838-2.684,4.738,4.738,0,0,1,.9-3.04,3,3,0,0,1,2.476-1.128,2.384,2.384,0,0,1,2.2,1.216h.029V18h1.7Zm-1.684-2.835v-.973a1.91,1.91,0,0,0-.524-1.352A1.718,1.718,0,0,0,61.5,19.18a1.793,1.793,0,0,0-1.512.714,3.217,3.217,0,0,0-.546,2,2.774,2.774,0,0,0,.524,1.769,1.678,1.678,0,0,0,1.387.662,1.805,1.805,0,0,0,1.429-.632A2.391,2.391,0,0,0,63.333,22.064Z\" fill=\"#5e5e5e\"></path><path d=\"M73.908,25.5h-1.7V21.273q0-2.1-1.486-2.1a1.622,1.622,0,0,0-1.282.582,2.162,2.162,0,0,0-.5,1.469V25.5H67.229V18h1.707v1.245h.029A2.673,2.673,0,0,1,71.4,17.824a2.265,2.265,0,0,1,1.868.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#5e5e5e\"></path><path d=\"M80.962,16.426a1.02,1.02,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.008,1.008,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.909.909,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,80.962,16.426ZM81.8,25.5H80.1V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M90.7,25.5H89V21.273q0-2.1-1.486-2.1a1.622,1.622,0,0,0-1.282.582,2.157,2.157,0,0,0-.506,1.469V25.5H84.023V18H85.73v1.245h.03a2.673,2.673,0,0,1,2.431-1.421,2.265,2.265,0,0,1,1.868.795,3.57,3.57,0,0,1,.644,2.3Z\" fill=\"#5e5e5e\"></path><path d=\"M106.984,18l-2.212,7.5h-1.78l-1.361-5.083a3.215,3.215,0,0,1-.1-.659H101.5a3.069,3.069,0,0,1-.131.644l-1.48,5.1H98.145L95.939,18H97.7l1.363,5.405a3.16,3.16,0,0,1,.087.645H99.2a3.384,3.384,0,0,1,.117-.659L100.832,18h1.6l1.347,5.428a3.732,3.732,0,0,1,.095.644h.052a3.387,3.387,0,0,1,.11-.644L105.365,18Z\" fill=\"#5e5e5e\"></path><path d=\"M109.1,16.426a1.018,1.018,0,0,1-.714-.272.886.886,0,0,1-.3-.688.912.912,0,0,1,.3-.7,1.006,1.006,0,0,1,.714-.278,1.039,1.039,0,0,1,.732.278.912.912,0,0,1,.3.7.9.9,0,0,1-.3.678A1.034,1.034,0,0,1,109.1,16.426Zm.841,9.074h-1.7V18h1.7Z\" fill=\"#5e5e5e\"></path><path d=\"M116.117,25.42a2.955,2.955,0,0,1-1.31.248q-2.182,0-2.183-2.094V19.333h-1.253V18h1.253V16.264l1.7-.483V18h1.794v1.333h-1.794v3.75a1.484,1.484,0,0,0,.241.952,1.006,1.006,0,0,0,.807.285,1.167,1.167,0,0,0,.746-.248Z\" fill=\"#5e5e5e\"></path><path d=\"M124.248,25.5h-1.7V21.4q0-2.226-1.487-2.226a1.556,1.556,0,0,0-1.26.644,2.568,2.568,0,0,0-.513,1.649V25.5h-1.707V14.4h1.707v4.849h.029a2.685,2.685,0,0,1,2.432-1.421q2.5,0,2.5,3.055Z\" fill=\"#5e5e5e\"></path><path d=\"M141.907,25.5h-1.728V18.7q0-.835.1-2.043h-.029a6.992,6.992,0,0,1-.285.988L136.831,25.5h-1.2l-3.143-7.793a7.236,7.236,0,0,1-.277-1.047h-.029q.057.63.058,2.058V25.5h-1.611V15h2.453l2.762,7a10.884,10.884,0,0,1,.41,1.2h.036c.181-.551.327-.962.44-1.23L139.541,15h2.366Z\" fill=\"#5e5e5e\"></path><path d=\"M145.158,16.426a1.022,1.022,0,0,1-.714-.272.89.89,0,0,1-.3-.688.916.916,0,0,1,.3-.7,1.009,1.009,0,0,1,.714-.278,1.043,1.043,0,0,1,.733.278.911.911,0,0,1,.3.7.9.9,0,0,1-.3.678A1.038,1.038,0,0,1,145.158,16.426ZM146,25.5h-1.7V18H146Z\" fill=\"#5e5e5e\"></path><path d=\"M153.589,25.156a4.2,4.2,0,0,1-2.131.52,3.606,3.606,0,0,1-2.695-1.044,3.691,3.691,0,0,1-1.026-2.706,4.07,4.07,0,0,1,1.1-2.978,3.944,3.944,0,0,1,2.948-1.124,4.3,4.3,0,0,1,1.81.36v1.582a2.743,2.743,0,0,0-1.67-.586,2.32,2.32,0,0,0-1.766.728,2.665,2.665,0,0,0-.688,1.908,2.536,2.536,0,0,0,.648,1.838,2.3,2.3,0,0,0,1.739.674,2.716,2.716,0,0,0,1.729-.652Z\" fill=\"#5e5e5e\"></path><path d=\"M159.625,19.619a1.4,1.4,0,0,0-.887-.242,1.513,1.513,0,0,0-1.259.682,3.04,3.04,0,0,0-.506,1.852V25.5h-1.7V18h1.7v1.545H157a2.606,2.606,0,0,1,.766-1.233,1.724,1.724,0,0,1,1.154-.444,1.432,1.432,0,0,1,.7.14Z\" fill=\"#5e5e5e\"></path><path d=\"M164.02,25.676a3.719,3.719,0,0,1-2.773-1.051,3.8,3.8,0,0,1-1.036-2.787,3.7,3.7,0,0,1,3.991-4.014,3.6,3.6,0,0,1,2.739,1.033,3.986,3.986,0,0,1,.982,2.864,3.932,3.932,0,0,1-1.059,2.875A3.8,3.8,0,0,1,164.02,25.676Zm.08-6.5a1.938,1.938,0,0,0-1.575.7,2.913,2.913,0,0,0-.579,1.919,2.744,2.744,0,0,0,.586,1.856,1.965,1.965,0,0,0,1.568.678,1.87,1.87,0,0,0,1.542-.666,2.956,2.956,0,0,0,.538-1.9,3,3,0,0,0-.538-1.911A1.858,1.858,0,0,0,164.1,19.18Z\" fill=\"#5e5e5e\"></path><path d=\"M169.182,25.266V23.691a3.392,3.392,0,0,0,2.1.725q1.539,0,1.538-.908a.714.714,0,0,0-.132-.436,1.241,1.241,0,0,0-.355-.318,2.784,2.784,0,0,0-.527-.25q-.3-.108-.677-.248a7.052,7.052,0,0,1-.832-.389,2.545,2.545,0,0,1-.615-.465,1.745,1.745,0,0,1-.37-.59,2.145,2.145,0,0,1-.125-.769,1.775,1.775,0,0,1,.256-.955,2.223,2.223,0,0,1,.69-.7,3.289,3.289,0,0,1,.98-.425,4.511,4.511,0,0,1,1.136-.143,5.181,5.181,0,0,1,1.86.315v1.487a3.136,3.136,0,0,0-1.816-.542,2.317,2.317,0,0,0-.582.066,1.472,1.472,0,0,0-.443.183.886.886,0,0,0-.286.282.669.669,0,0,0-.1.363.77.77,0,0,0,.1.41.93.93,0,0,0,.3.3,2.654,2.654,0,0,0,.483.234q.282.105.649.23a9.4,9.4,0,0,1,.867.4,2.886,2.886,0,0,1,.656.465,1.806,1.806,0,0,1,.417.6,2.034,2.034,0,0,1,.147.81,1.847,1.847,0,0,1-.264,1,2.205,2.205,0,0,1-.7.7,3.292,3.292,0,0,1-1.015.413,5.222,5.222,0,0,1-1.212.136A5.115,5.115,0,0,1,169.182,25.266Z\" fill=\"#5e5e5e\"></path><path d=\"M179.443,25.676a3.717,3.717,0,0,1-2.772-1.051,3.793,3.793,0,0,1-1.036-2.787,3.7,3.7,0,0,1,3.991-4.014,3.6,3.6,0,0,1,2.739,1.033,3.986,3.986,0,0,1,.982,2.864,3.932,3.932,0,0,1-1.059,2.875A3.8,3.8,0,0,1,179.443,25.676Zm.08-6.5a1.936,1.936,0,0,0-1.574.7,2.908,2.908,0,0,0-.579,1.919,2.739,2.739,0,0,0,.586,1.856,1.964,1.964,0,0,0,1.567.678,1.868,1.868,0,0,0,1.542-.666,2.95,2.95,0,0,0,.539-1.9,2.99,2.99,0,0,0-.539-1.911A1.857,1.857,0,0,0,179.523,19.18Z\" fill=\"#5e5e5e\"></path><path d=\"M189.067,15.781a1.533,1.533,0,0,0-.784-.2q-1.237,0-1.237,1.4V18h1.743v1.333h-1.736V25.5h-1.7V19.333h-1.282V18h1.282V16.784a2.362,2.362,0,0,1,.777-1.871,2.82,2.82,0,0,1,1.94-.684,2.879,2.879,0,0,1,1,.138Z\" fill=\"#5e5e5e\"></path><path d=\"M194.23,25.42a2.955,2.955,0,0,1-1.31.248q-2.182,0-2.183-2.094V19.333h-1.253V18h1.253V16.264l1.7-.483V18h1.793v1.333h-1.793v3.75a1.484,1.484,0,0,0,.241.952,1,1,0,0,0,.806.285,1.165,1.165,0,0,0,.746-.248Z\" fill=\"#5e5e5e\"></path><rect x=\"13\" y=\"11\" width=\"9\" height=\"9\" fill=\"#f25022\"></rect><rect x=\"13\" y=\"21\" width=\"9\" height=\"9\" fill=\"#00a4ef\"></rect><rect x=\"23\" y=\"11\" width=\"9\" height=\"9\" fill=\"#7fba00\"></rect><rect x=\"23\" y=\"21\" width=\"9\" height=\"9\" fill=\"#ffb900\"></rect></svg></div><p class=\"mt-2 text-sm\">Use your Hampshire Scouts account</p></div>", 1);
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Need a myQSA account? ");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Need a myQSA account? ");
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -22189,9 +22560,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_ValidationErrors = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ValidationErrors");
 
-  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+  var _component_Message = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Message");
 
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Sign In"
@@ -22231,10 +22604,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ValidationErrors, {
     "class": "mt-4"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-28",
-    disabled: _ctx.form.processing,
-    loading: _ctx.form.processing
+  }), _ctx.$page.props.flash.event === 'password-reset' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Message, {
+    key: 0,
+    "class": "mt-4 bg-green font-bold p-4 text-white",
+    icon: "check-circle"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_3];
+    }),
+    _: 1
+    /* STABLE */
+
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('password.request'),
+    "class": "inline mr-4 hover:text-gray-700 dark:hover:text-gray-400 hover:underline cursor-pointer text-sm"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_5];
@@ -22244,14 +22627,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
+  , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    "class": "inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-28",
+    disabled: _ctx.form.processing,
+    loading: _ctx.form.processing
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_6];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
   , ["disabled", "loading"])])], 32
   /* HYDRATE_EVENTS */
-  ), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  ), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('register'),
     "class": "font-bold hover:text-blue"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
+      return [_hoisted_9];
     }),
     _: 1
     /* STABLE */
@@ -50283,6 +50679,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/ForgotPassword.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Auth/ForgotPassword.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ForgotPassword_vue_vue_type_template_id_2d73eca8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ForgotPassword.vue?vue&type=template&id=2d73eca8 */ "./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8");
+/* harmony import */ var _ForgotPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ForgotPassword.vue?vue&type=script&lang=js */ "./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js");
+/* harmony import */ var _Users_louis_Documents_Scouts_Hampshire_Scouts_myQSA_repo_nosync_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_Users_louis_Documents_Scouts_Hampshire_Scouts_myQSA_repo_nosync_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ForgotPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ForgotPassword_vue_vue_type_template_id_2d73eca8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Auth/ForgotPassword.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/Register.vue":
 /*!**********************************************!*\
   !*** ./resources/js/Pages/Auth/Register.vue ***!
@@ -50303,6 +50727,34 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_louis_Documents_Scouts_Hampshire_Scouts_myQSA_repo_nosync_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Register_vue_vue_type_template_id_e59c811e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Auth/Register.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/ResetPassword.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Auth/ResetPassword.vue ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ResetPassword_vue_vue_type_template_id_1da614ac__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ResetPassword.vue?vue&type=template&id=1da614ac */ "./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac");
+/* harmony import */ var _ResetPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ResetPassword.vue?vue&type=script&lang=js */ "./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js");
+/* harmony import */ var _Users_louis_Documents_Scouts_Hampshire_Scouts_myQSA_repo_nosync_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_Users_louis_Documents_Scouts_Hampshire_Scouts_myQSA_repo_nosync_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ResetPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ResetPassword_vue_vue_type_template_id_1da614ac__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Auth/ResetPassword.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -50655,6 +51107,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ForgotPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ForgotPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ForgotPassword.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/Register.vue?vue&type=script&lang=js":
 /*!**********************************************************************!*\
   !*** ./resources/js/Pages/Auth/Register.vue?vue&type=script&lang=js ***!
@@ -50667,6 +51135,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Register.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ResetPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ResetPassword_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ResetPassword.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -50991,6 +51475,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8 ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ForgotPassword_vue_vue_type_template_id_2d73eca8__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ForgotPassword_vue_vue_type_template_id_2d73eca8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ForgotPassword.vue?vue&type=template&id=2d73eca8 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ForgotPassword.vue?vue&type=template&id=2d73eca8");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/Register.vue?vue&type=template&id=e59c811e":
 /*!****************************************************************************!*\
   !*** ./resources/js/Pages/Auth/Register.vue?vue&type=template&id=e59c811e ***!
@@ -51003,6 +51503,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_e59c811e__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_e59c811e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Register.vue?vue&type=template&id=e59c811e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Register.vue?vue&type=template&id=e59c811e");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ResetPassword_vue_vue_type_template_id_1da614ac__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ResetPassword_vue_vue_type_template_id_1da614ac__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ResetPassword.vue?vue&type=template&id=1da614ac */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/ResetPassword.vue?vue&type=template&id=1da614ac");
 
 
 /***/ }),
@@ -51278,8 +51794,12 @@ function compileToFunction(template, options) {
 var map = {
 	"./App/Dashboard": "./resources/js/Pages/App/Dashboard.vue",
 	"./App/Dashboard.vue": "./resources/js/Pages/App/Dashboard.vue",
+	"./Auth/ForgotPassword": "./resources/js/Pages/Auth/ForgotPassword.vue",
+	"./Auth/ForgotPassword.vue": "./resources/js/Pages/Auth/ForgotPassword.vue",
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.vue",
 	"./Auth/Register.vue": "./resources/js/Pages/Auth/Register.vue",
+	"./Auth/ResetPassword": "./resources/js/Pages/Auth/ResetPassword.vue",
+	"./Auth/ResetPassword.vue": "./resources/js/Pages/Auth/ResetPassword.vue",
 	"./Auth/Sign In": "./resources/js/Pages/Auth/Sign In.vue",
 	"./Auth/Sign In.vue": "./resources/js/Pages/Auth/Sign In.vue",
 	"./Auth/VerifyEmail": "./resources/js/Pages/Auth/VerifyEmail.vue",

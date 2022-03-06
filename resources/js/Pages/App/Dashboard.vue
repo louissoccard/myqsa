@@ -1,6 +1,8 @@
 <template>
+    <Head title="Dashboard" />
+
     <h2 class="font-bold text-2xl mb-4">Good {{ timeOfDay }}, {{ user.first_name }}</h2>
-    <Card title="Queen's Scout Award" :href="route('dashboard')" class="mb-4">
+    <Card title="Queen's Scout Award" :href="route('award')" class="mb-4">
         <div class="flex flex-row flex-wrap lg:flex-nowrap lg:justify-center items-start mt-8 lg:space-x-6">
             <ProgressBar section="Membership" colour="#003982" class="mb-6 lg:mb-0 sm:pr-3 lg:pr-0"
                                       :percentage="25">
@@ -49,6 +51,7 @@
 
 <script>
 import {defineComponent} from "vue";
+import {Head} from "@inertiajs/inertia-vue3";
 import Card from "@/Components/Interface/Card";
 import ProgressBar from "@/Components/Dashboard/ProgressBar";
 import Notification from "@/Components/Interface/Notification";
@@ -57,7 +60,7 @@ import Button from "@/Components/Buttons/Button";
 import Feather from "@/Components/Feather";
 
 export default defineComponent({
-    components: {Button, TextArea, Notification, ProgressBar, Card, Feather},
+    components: {Head, Button, TextArea, Notification, ProgressBar, Card, Feather},
     props: {
         user: Object,
         notes: String,

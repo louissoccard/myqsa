@@ -10,9 +10,12 @@
                 <Input id="password" class="w-full" label="Password" type="password" v-model="form.password"
                        required autocomplete="current-password"/>
                 <ValidationErrors class="mt-4"></ValidationErrors>
+                <Message class="mt-4 bg-green font-bold p-4 text-white" icon="check-circle" v-if="$page.props.flash.event === 'password-reset'">
+                    Your password has been reset
+                </Message>
                 <div class="ml-auto mt-8">
-                    <p class="inline mr-4 hover:text-gray-700 dark:hover:text-gray-400 cursor-pointer text-sm">Forgot
-                        password?</p>
+                    <Link :href="route('password.request')" class="inline mr-4 hover:text-gray-700 dark:hover:text-gray-400 hover:underline cursor-pointer text-sm">Forgot
+                        password?</Link>
                     <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-28"
                             :disabled="form.processing" :loading="form.processing">Sign In
                     </Button>
@@ -37,9 +40,10 @@ import Input from "@/Components/Forms/Input";
 import ValidationErrors from "@/Components/Forms/ValidationErrors";
 import Button from "@/Components/Buttons/Button";
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import Message from "@/Components/Interface/Message";
 
 export default defineComponent({
-    components: {Button, Input, ValidationErrors, Logo, Head, Link},
+    components: {Button, Input, ValidationErrors, Logo, Head, Link, Message},
     layout: null,
 
     data() {
@@ -60,7 +64,7 @@ export default defineComponent({
                     ... data,
                     remember: this.form.remember ? 'on' : ''
                 }))
-                .post(this.route('sign-in'), {
+                .post(this.route('login'), {
                     onFinish: () => this.form.reset('password'),
                 })
         }

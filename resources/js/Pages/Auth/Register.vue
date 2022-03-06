@@ -15,13 +15,13 @@
                     <option value="null" selected>Select</option>
                     <option v-for="district of formattedDistricts" :key="district.id" :value="district.id">{{ district.name }}</option>
                 </Select>
-                <Message class="mt-4" v-show="this.districts.filter(district => district.name === 'Hampshire' && district.id === parseInt(form.district)).length === 1">If you have a Hampshire Scouts Microsoft account you should use that to <Link :href="route('sign-in')" class="font-bold hover:text-blue">Sign In</Link>. You do not need to register for an account.</Message>
+                <Message class="mt-4" v-show="this.districts.filter(district => district.name === 'Hampshire' && district.id === parseInt(form.district)).length === 1">If you have a Hampshire Scouts Microsoft account you should use that to <Link :href="route('login')" class="font-bold hover:text-blue">Sign In</Link>. You do not need to register for an account.</Message>
                 <ValidationErrors class="mt-4"></ValidationErrors>
                 <div class="mt-8 text-right w-full mb-6">
                     <Button class="inline bg-navy w-32 hover:bg-navy-darkened disabled:bg-navy-darkened" :disabled="form.processing" :loading="form.processing">Register</Button>
                 </div>
             </form>
-            <p class="w-full text-center border-t pt-4 border-gray-400 dark:border-gray-700">Already have an account? <Link :href="route('sign-in')" class="font-bold hover:text-blue">Sign In</Link></p>
+            <p class="w-full text-center border-t pt-4 border-gray-400 dark:border-gray-700">Already have an account? <Link :href="route('login')" class="font-bold hover:text-blue">Sign In</Link></p>
         </div>
     </div>
 </template>

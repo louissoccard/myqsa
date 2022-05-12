@@ -3,10 +3,10 @@
         <span v-if="active" class="absolute inset-y-0 left-0 w-1 bg-navy dark:bg-white" aria-hidden="true"></span>
         <div v-if="!icon" class="inline-block" style="width: calc(0.75rem + 18px)">&nbsp;</div>
 
-        <a :href="href" class="flex items-center w-full px-3 select-none font-bold" :class="[link_classes, this.class, paddingY]">
+        <Component :is="active ? 'div' : 'a'" :href="href" class="flex items-center w-full px-3 select-none font-bold" :class="[link_classes, this.class, paddingY]">
             <Feather v-if="icon" class="inline mr-3" :size="18" :icon="icon"></Feather>
             <slot></slot>
-        </a>
+        </Component>
     </div>
 </template>
 

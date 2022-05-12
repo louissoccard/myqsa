@@ -2,7 +2,7 @@
     <div>
         <MainMenuItem :active="route().current('dashboard')" :href="route('dashboard')" icon="layout">Dashboard
         </MainMenuItem>
-        <MainMenuItem :active="false" :href="route('award')" icon="award">My Award</MainMenuItem>
+        <MainMenuItem :active="route().current('award')" :href="route('award')" icon="award">My Award</MainMenuItem>
         <MainMenuItem :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>
         <MainMenuItem :active="false" :href="route('dashboard')" icon="grid">Admin Centre</MainMenuItem>
 

@@ -2,8 +2,8 @@
     "name": "louissoccard/myqsa",
     "type": "project",
     "description": "Records system for the Queen's Scout Award in Hampshire.",
-    "keywords": ["scouts", "qsa", "queen's scout award"],
-    "license": "Apache License 2.0",
+    "keywords": ["scouts", "qsa", "queen's-scout-award"],
+    "license": "Apache-2.0",
     "require": {
         "php": "^7.4|^8.0",
         "fruitcake/laravel-cors": "^2.0",

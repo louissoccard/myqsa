@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call([PermissionSeeder::class]);
         $this->call([DistrictSeeder::class]);
-        \App\Models\User::create(['first_name' => 'Louis', 'last_name' => 'Soccard', 'email' => 'louis.soccard@hampshirescouts.org.uk', 'password' => \Illuminate\Support\Facades\Hash::make('password'), 'district_id' => 1]);
+        $this->call([UserSeeder::class]);
     }
 }

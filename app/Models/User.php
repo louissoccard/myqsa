@@ -6,12 +6,12 @@ use App\Notifications\CustomVerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable // implements  MustVerifyEmail
 {
@@ -20,6 +20,7 @@ class User extends Authenticatable // implements  MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

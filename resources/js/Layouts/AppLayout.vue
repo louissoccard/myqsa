@@ -74,7 +74,7 @@
             <aside
                 class="z-20 hidden fixed left-0 bottom-0 top-16 w-64 overflow-y-auto bg-gray-100 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 md:flex flex-shrink-0 shadow cursor-default select-none">
                 <div class="flex-1 flex flex-col justify-between py-4 text-black dark:text-white">
-                    <MainMenu class="mb-3"></MainMenu>
+                    <MainMenu class="mb-3" :permissions="user.permissions"></MainMenu>
                     <div class="inline-block px-6 text-grey-60 text-sm dark:text-grey-20">
                         <h6 class="font-normal">© Hampshire Scouts 2022</h6>
                         <a class="font-bold hover:text-blue dark:hover:text-white" href="#">Privacy Policy</a>
@@ -103,7 +103,7 @@
                             <div class="w-full my-3 px-3">
                                 <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
                             </div>
-                            <MainMenu></MainMenu>
+                            <MainMenu :permissions="user.permissions"></MainMenu>
                             <div class="w-full my-3 px-3">
                                 <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
                             </div>

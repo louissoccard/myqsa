@@ -15,7 +15,7 @@ module.exports = {
         colors: {
             'current': 'currentColor',
             'transparent': 'transparent',
-            'gray': colors.trueGray,
+            'gray': colors.neutral,
 
             'purple': '#7413dc',
             'teal': '#00a794',

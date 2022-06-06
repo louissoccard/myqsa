@@ -39,7 +39,7 @@ class HandleInertiaRequests extends Middleware
         $array = array_merge(parent::share($request), [
             'jetstream' => '',
             'user' => $request->user() ?
-                array_merge($request->user()->only('first_name', 'last_name', 'email'),
+                array_merge($request->user()->only('id', 'first_name', 'last_name', 'email'),
                     [
                         'district' => $request->user()->district->name,
                         'permissions' => $request->user()->getAllPermissions()->map(fn ($item) => $item->name)->all()

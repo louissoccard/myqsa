@@ -4,7 +4,7 @@
         </MainMenuItem>
         <MainMenuItem v-if="permissions.includes('qsa.has')" :active="route().current('award')" :href="route('award')" icon="award">My Award</MainMenuItem>
         <MainMenuItem v-if="canAccessMyParticipants" :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>
-        <MainMenuItem v-if="canAccessAdminCentre" :active="false" :href="route('dashboard')" icon="grid">Admin Centre</MainMenuItem>
+        <MainMenuItem v-if="canAccessAdminCentre" :active="route().current('admin-centre.*')" :href="route('admin-centre.index')" icon="grid">Admin Centre</MainMenuItem>
 
         <div class="w-full my-3 px-3">
             <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
@@ -28,11 +28,11 @@ export default defineComponent({
     props: {permissions: Array},
     computed: {
         canAccessMyParticipants() {
-            return this.permissions.filter(item => item.match('^participants.*$')).length > 0;
+            return this.permissions.filter(item => item.match('^participants\..*$')).length > 0;
         },
 
         canAccessAdminCentre() {
-            return this.permissions.filter(item => item.match('^admin-centre.*$')).length > 0;
+            return this.permissions.filter(item => item.match('^admin-centre\..*$')).length > 0;
         }
     }
 })

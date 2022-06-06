@@ -13,7 +13,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable // implements  MustVerifyEmail
+class User extends Authenticatable implements  MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -55,6 +55,7 @@ class User extends Authenticatable // implements  MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_signed_in_at' => 'datetime',
     ];
 
     public function district(): BelongsTo

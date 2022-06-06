@@ -1,7 +1,8 @@
 <template>
     <div class="text-left">
-        <label class="block" :for="id">{{ label }}</label>
-        <input :id="id" class="block w-full bg-gray-100 dark:bg-gray-800 rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-200 focus:outline-none focus:ring-0 px-2 py-1" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input" :type="type">
+        <label class="block" :class="{'hidden': hideLabel}" :for="id">{{ label }}</label>
+        <input :id="id" class="block w-full bg-gray-100 dark:bg-gray-800 rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1" :class="inputClass" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input" :type="type">
+        <slot></slot>
     </div>
 </template>
 
@@ -20,6 +21,16 @@
                 type: String,
                 required: true,
             },
+            inputClass: {
+                type: String,
+                required: false,
+                default: '',
+            },
+            hideLabel: {
+                type: Boolean,
+                required: false,
+                default: false,
+            }
         },
 
         emits: ['update:modelValue'],

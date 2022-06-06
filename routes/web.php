@@ -3,7 +3,7 @@
 require_once __DIR__ . '/fortify.php';
 require_once __DIR__ . '/jetstream.php';
 
-use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,3 +21,17 @@ use Inertia\Inertia;
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [\App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->get('/award', [\App\Http\Controllers\AwardController::class, 'show'])->name('award');
 Route::middleware(['auth:sanctum', 'verified'])->post('/save-notes', [\App\Http\Controllers\DashboardController::class, 'save_notes'])->name('dashboard.save-notes');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');
+
+// Admin Centre
+Route::middleware(['auth:sanctum', 'verified', \App\Http\Middleware\AccessAdminCentre::class])->group(function() {
+    Route::get('/admin-centre', function () {
+        return Inertia::render("App/AdminCentre/Index");
+    })->name("admin-centre.index");
+    Route::get('/admin-centre/users', [\App\Http\Controllers\UsersController::class, 'show'])->name("admin-centre.users.index");
+    Route::post('/admin-centre/users', [\App\Http\Controllers\UsersController::class, 'create'])->name("admin-centre.users.create");
+    Route::patch('/admin-centre/users/{id}', [\App\Http\Controllers\UsersController::class, 'patch'])->name("admin-centre.users.patch");
+    Route::patch('/admin-centre/users/reset-password/{id}', [\App\Http\Controllers\UsersController::class, 'reset_password'])->name("admin-centre.users.reset-password");
+    Route::delete('/admin-centre/users/{id}', [\App\Http\Controllers\UsersController::class, 'delete'])->name("admin-centre.users.delete");
+});

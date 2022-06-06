@@ -3,7 +3,7 @@
         <label class="block" :for="id">{{ label }}</label>
         <div class="flex flex-row">
             <select :id="id"
-                    class="appearance-none cursor-pointer block w-full bg-gray-100 dark:bg-gray-800 border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-200 focus:outline-none focus:ring-0 px-2 py-1"
+                    class="appearance-none cursor-pointer block w-full bg-gray-100 dark:bg-gray-800 border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1"
                     :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input">
                 <slot></slot>
             </select>

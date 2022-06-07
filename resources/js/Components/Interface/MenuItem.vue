@@ -2,7 +2,7 @@
     <Component :is="href ? 'Link' : 'div'" class="relative" :href="href">
         <div v-if="!icon" class="inline-block" style="width: calc(0.75rem + 18px)">&nbsp;</div>
 
-        <div class="flex items-center w-full px-3 select-none cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900" :class="[this.class, paddingY]">
+        <div class="flex items-center w-full px-3 select-none cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700" :class="[this.class, paddingY]">
             <Feather v-if="icon" class="inline mr-3" :size="18" :icon="icon"></Feather>
             <slot></slot>
         </div>

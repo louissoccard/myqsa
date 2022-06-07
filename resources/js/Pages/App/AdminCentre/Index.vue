@@ -4,7 +4,7 @@
     <h2 class="font-bold text-2xl mb-2">Welcome to the Admin Centre, {{ user.first_name }}</h2>
     <p class="mb-6">From here you can manage myQSA and assist users with any issues they may have.</p>
 
-    <h4 class="w-full border-b border-gray-300 font-bold pb-1 mb-2">Manage myQSA</h4>
+    <h4 class="w-full border-b border-gray-300 dark:border-gray-600 font-bold pb-1 mb-2">Manage myQSA</h4>
     <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <OptionCard :href="route('admin-centre.users.index')" icon="users">Users</OptionCard>
     </div>

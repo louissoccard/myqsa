@@ -169,7 +169,7 @@
             <div v-else>
                 <p class="mb-4">{{ plural(manageUser.first_name) }} password has been reset. Their new password is shown below:</p>
                 <div class="block mb-6 text-center">
-                    <p class="inline-block bg-gray-800 dark:bg-gray-400 text-gray-200 dark:text-gray-800 text-mono text-lg p-4">
+                    <p class="inline-block bg-gray-800 dark:bg-gray-800 text-gray-200 dark:text-gray-100 font-mono text-lg p-4">
                     {{ newPassword }}</p>
                 </div>
                 <p class="italic">Once you close this window their password will no longer be visible.</p>

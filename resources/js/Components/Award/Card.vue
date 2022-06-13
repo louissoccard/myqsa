@@ -1,6 +1,6 @@
 <template>
     <Link :href="href" class="w-full xl:w-1/2">
-        <div class="flex flex-col h-full bg-grey-5 dark:bg-gray-900 p-4 border-2 border-transparent hover:border-blue
+        <div class="flex flex-col h-full bg-grey-5 dark:bg-gray-900 p-4 border-2 border-transparent hover:border-blue dark:hover:border-white
             transition-border-color duration-300 select-none cursor-pointer">
             <div class="flex justify-between pb-2 mb-4 border-b border-grey-20 dark:border-grey-60">
                 <h3 class="text-xl font-bold">{{ title }}</h3>

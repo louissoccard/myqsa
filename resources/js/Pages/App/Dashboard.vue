@@ -29,13 +29,7 @@
     </Card>
 
     <div class="flex flex-col lg:flex-row lg:space-x-4 items-stretch">
-        <Card title="My Notes" class="lg:w-1/2 mb-4 lg:mb-0">
-            <form class="flex flex-col items-end flex-1 py-4" @submit.prevent="submit">
-                <TextArea id="notes" container-class="flex w-full flex-1" class="flex-1 resize-none overflow-y-auto min-h-28" v-model="form.notes"></TextArea>
-                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened text-sm w-24 mt-2"
-                        :disabled="form.processing" :loading="form.processing">Save
-                </Button>
-            </form>
+        <Card title="To Fill" class="lg:w-1/2 mb-4 lg:mb-0">
         </Card>
 
         <Card title="Updates & Announcements" class="lg:w-1/2">
@@ -55,15 +49,12 @@ import {Head} from "@inertiajs/inertia-vue3";
 import Card from "@/Components/Interface/Card";
 import ProgressBar from "@/Components/Dashboard/ProgressBar";
 import Notification from "@/Components/Interface/Notification";
-import TextArea from "@/Components/Forms/TextArea";
-import Button from "@/Components/Buttons/Button";
 import Feather from "@/Components/Feather";
 
 export default defineComponent({
-    components: {Head, Button, TextArea, Notification, ProgressBar, Card, Feather},
+    components: {Head, Notification, ProgressBar, Card, Feather},
     props: {
         user: Object,
-        notes: String,
         percentages: Object,
     },
 
@@ -84,22 +75,12 @@ export default defineComponent({
 
     data() {
         return {
-            form: this.$inertia.form({
-                notes: this.notes,
-            }),
-
             announcements: [
                 {"title": "Upcoming Maintenance", "daysPast": 0, "colour": "bg-red"},
                 {"title": "ICV List Zoom Session", "daysPast": 3, "colour": "bg-green"},
                 {"title": "County Kudu 2021", "daysPast": 15, "colour": "bg-green"},
-                ],
+            ],
         }
     },
-
-    methods: {
-        submit() {
-            this.form.post(this.route('dashboard.save-notes'));
-        }
-    }
 })
 </script>

@@ -9,8 +9,8 @@
                 <Input id="email-address" class="mb-8 w-full" label="Email Address" type="email" v-model="form.email"
                        required autofocus/>
                 <div class="ml-auto">
-                    <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-48"
-                            :disabled="form.processing" :loading="form.processing">Email Reset Link
+                    <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened"
+                            :disabled="form.processing">Email Reset Link
                     </Button>
                 </div>
             </form>

@@ -33,8 +33,8 @@ export default defineComponent({
 
     computed: {
         link_classes() {
-            if (this.active) return 'text-grey-80 dark:text-grey-5 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900';
-            else if (this.href) return 'cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900';
+            if (this.active) return 'text-grey-80 dark:text-grey-5 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800';
+            else if (this.href) return 'cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800';
             else return 'cursor-default';
         }
     }

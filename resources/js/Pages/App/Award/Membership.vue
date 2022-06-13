@@ -15,7 +15,7 @@
         </template>
 
         <p class="mb-4">Enter the dates below so that myQSA can calculate your membership length. Leave the field blank
-            if it does not apply to you.</p>
+            if it does not apply to you. The system will only calculate your progress once you enter your date of birth.</p>
         <div class="grid sm:grid-cols-2 gap-4">
             <Input id="date-of-birth" label="Date of Birth" placeholder="dd/mm/yyyy" class="w-full"
                    :saved="date_of_birth.saved" v-model="date_of_birth.value" @input="submit(date_of_birth)"/>
@@ -86,8 +86,6 @@ export default defineComponent({
                 data[date.name] = null;
             }
 
-            console.log(data);
-
             axios.post(this.route('award.membership.store', this.id), data)
                 .then(() => {
                     date.saved = true;
@@ -123,12 +121,14 @@ export default defineComponent({
         },
 
         date(string) {
+            if (string === null) return;
             let date = string.split('/');
             if (isNaN(Date.parse(`${date[1]}/${date[0]}/${date[2]}`))) return null;
             return new Date(date[2], date[1] - 1, date[0]);
         },
 
         updateCompletion() {
+            if (this.date_of_birth.value === null) return;
             let sixteenthBirthday = this.date(this.date_of_birth.value);
             sixteenthBirthday.setFullYear(sixteenthBirthday.getFullYear() + 16);
             let eighteenthBirthday = this.date(this.date_of_birth.value);

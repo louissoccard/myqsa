@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class QsaRecord extends Model
 {
@@ -14,10 +15,15 @@ class QsaRecord extends Model
         return $this->hasOne(User::class);
     }
 
+    public function nights_away(): HasMany
+    {
+        return $this->hasMany(NightsAwayEvent::class);
+    }
+
     public function percentages(): array {
         return [
             'membership' => $this->membership_percentage(),
-            'nights_away' => 0,
+            'nights_away' => $this->nights_away_percentage(),
             'icv_list' => 0,
             'dofe' => 0,
             'presentation' => 0,
@@ -62,5 +68,13 @@ class QsaRecord extends Model
         }
 
         return min(100, (($explorerMonths + $networkMonths) / 18) * 100);
+    }
+
+    private function nights_away_percentage(): int
+    {
+        $camping = $this->nights_away->where('type', 'Camping')->sum('number_of_nights');
+        $indoors = $this->nights_away->where('type', 'Indoors')->sum('number_of_nights');
+
+        return min(100, (($camping + $indoors) / 18) * 100);
     }
 }

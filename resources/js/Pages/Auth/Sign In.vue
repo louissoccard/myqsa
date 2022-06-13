@@ -6,7 +6,7 @@
                    required autofocus/>
             <Input id="password" class="w-full" label="Password" type="password" v-model="form.password"
                    required autocomplete="current-password"/>
-            <ValidationErrors class="mt-4"></ValidationErrors>
+            <ValidationErrors :errors="form.errors" class="mt-4"></ValidationErrors>
             <Message class="mt-4 bg-green dark:bg-green-darkened font-bold p-4 text-white" icon="check-circle"
                      v-if="$page.props.flash.event === 'password-reset'">
                 Your password has been reset
@@ -14,16 +14,14 @@
             <div class="ml-auto mt-8">
                 <Link :href="route('password.request')"
                       class="inline mr-4 hover:text-gray-700 dark:hover:text-gray-400 hover:underline cursor-pointer text-sm">
-                    Forgot
-                    password?
-                </Link>
-                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-28"
-                        :disabled="form.processing" :loading="form.processing">Sign In
+                    Forgot password?</Link>
+                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened"
+                        :disabled="form.processing">Sign In
                 </Button>
             </div>
         </form>
         <div class="my-6 py-4 w-full border-y border-gray-400 dark:border-gray-700 text-center">
-            <div class="cursor-pointer">
+            <div class="cursor-pointer hover:opacity-50">
                 <svg class="hidden dark:inline" xmlns="http://www.w3.org/2000/svg" width="215" height="41"
                      viewBox="0 0 215 41"><title>MS-SymbolLockup</title>
                     <rect width="215" height="41" fill="#2f2f2f"/>

@@ -12,14 +12,14 @@
                 <slot></slot>
             </div>
             <Card title="Approval" class="flex-grow-0"
-                  :description="'Once you have complete the ' + (altTitle === undefined ? title.toLowerCase() : altTitle) + ' requirement, you can submit it to be approved. You may also add additional comments.'">
+                  :description="'Once you have complete the ' + (altTitle === null ? title.toLowerCase() : altTitle) + ' requirement, you can submit it to be approved. You may also add additional comments.'">
                 <template #header-content>
                     <p>Status: Draft</p>
                 </template>
                 <form class="text-right">
                     <TextArea id="approval-message" label="Comments" rows="4" class="mb-3"
                               placeholder="Enter your comments here..."></TextArea>
-                    <Button class="w-28" :class="buttonColourClasses">Submit</Button>
+                    <Button :class="buttonColourClasses">Submit</Button>
                 </form>
             </Card>
         </div>

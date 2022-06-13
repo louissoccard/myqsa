@@ -19,12 +19,12 @@
                 </ul>
             </div>
         </Card>
-<!--        <Card title="Nights Away" :href="route('award.nights-away.show')" progressBarId="nights-away-progress"-->
-<!--                      :percentage="percentages.nights_away"-->
-<!--                      colour="#00a794" class="xl:pl-2 mb-4">-->
-<!--            You must:<br>-->
-<!--            Complete 18 nights away as an Explorer Scout or Scout Network member, of which at least 12 must be camping.-->
-<!--        </Card>-->
+        <Card title="Nights Away" :href="route('award.nights-away.show')" progressBarId="nights-away-progress"
+                      :percentage="percentages.nights_away"
+                      colour="#00a794" class="xl:pl-2 mb-4">
+            You must:<br>
+            Complete 18 nights away as an Explorer Scout or Scout Network member, of which at least 12 must be camping.
+        </Card>
 <!--        <Card title="ICV List" :href="route('award.icv-list.show')" progressBarId="icv-progress"-->
 <!--                      :percentage="percentages.icv_list"-->
 <!--                      colour="#ffb4e5" class="xl:pr-2 mb-4">-->

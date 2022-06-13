@@ -15,8 +15,8 @@
         </Message>
 
         <form @submit.prevent="submit" class="mt-4 w-full flex flex-col items-center">
-            <Button class="bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-64"
-                    :disabled="form.processing" :loading="form.processing">Resend Verification Email
+            <Button class="bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened"
+                    :disabled="form.processing">Resend Verification Email
             </Button>
 
             <Link :href="route('sign-out')" method="post" as="button"

@@ -12,8 +12,8 @@
                    required autocomplete="new-password"/>
             <ValidationErrors class="mt-4"></ValidationErrors>
             <div class="ml-auto mt-8">
-                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened w-48"
-                        :disabled="form.processing" :loading="form.processing">Reset Password
+                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened"
+                        :disabled="form.processing">Reset Password
                 </Button>
             </div>
         </form>

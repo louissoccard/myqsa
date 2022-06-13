@@ -7,37 +7,50 @@
         </Input>
         <slot name="header"></slot>
     </div>
-    <table class="w-full table-fixed">
-        <thead class="font-bold text-left bg-gray-200 dark:bg-gray-800 border-b-2 border-gray-300 dark:border-gray-700">
-        <tr>
-            <th class="p-2" v-for="column of columns" :key="column.name"
-                :class="{'hover:bg-gray-300 dark:hover:bg-gray-700 cursor-pointer': column.sortable, 'w-20': column.name === 'index'}"
-                @click="setSortBy(column)">
-                <div class="flex items-center">
-                    <p> {{ column.name === 'index' ? '#' : column.name }} </p>
-                    <div class="flex items-center" v-if="column.sortable">
-                        <Feather icon="chevron-down" v-show="column.sorted === 'asc'" :size="16" class="ml-1"/>
-                        <Feather icon="chevron-up" v-show="column.sorted === 'desc'" :size="16" class="ml-1"/>
-                        <Feather icon="minus" v-show="column.sorted !== 'asc' && column.sorted !== 'desc'" :size="16"
-                                 class="ml-1"/>
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead
+                class="font-bold text-left bg-gray-200 dark:bg-gray-800 border-b-2 border-gray-300 dark:border-gray-700">
+            <tr>
+                <th class="p-2" v-for="column of columns" :key="column.name"
+                    :class="[{'hover:bg-gray-300 dark:hover:bg-gray-700 cursor-pointer': column.sortable, 'w-20': column.name === 'index'}, column.class]"
+                    @click="setSortBy(column)">
+                    <div class="flex items-center">
+                        <p> {{ column.name === 'index' ? '#' : column.name }} </p>
+                        <div class="flex items-center" v-if="column.sortable">
+                            <Feather icon="chevron-down" v-show="column.sorted === 'asc'" :size="16" class="ml-1"/>
+                            <Feather icon="chevron-up" v-show="column.sorted === 'desc'" :size="16" class="ml-1"/>
+                            <Feather icon="minus" v-show="column.sorted !== 'asc' && column.sorted !== 'desc'"
+                                     :size="16"
+                                     class="ml-1"/>
+                        </div>
                     </div>
-                </div>
-            </th>
-            <th class="w-14" v-if="clickable"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="row of filterTableData(tableData)" :key="row.id" @click="emitClick(row.id)"
-            class="border-b border-gray-200 dark:border-gray-700" :class="{ 'hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer': clickable }">
-            <td v-for="column of columns" class="px-4 py-2">{{ row[column.name.toLowerCase()] }}</td>
-            <td v-if="clickable" class="px-4 py-2 text-center">
-                <div class="flex items-center justify-center h-full">
-                    <Feather icon="chevron-right" class="h-full" :size="20"/>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                </th>
+                <th class="max-w-14" v-if="clickable"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-if="tableData.length === 0">
+                <td class="px-2 py-4 text-center"
+                    :colspan="columns.length + (numbered === true ? 1 : 0) + (clickable === true ? 1 : 0)">
+                    {{ emptyMessage }}
+                </td>
+            </tr>
+            <tr v-for="row of filterTableData(tableData)" :key="row.id" @click="emitClick(row.id)"
+                class="border-b border-gray-200 dark:border-gray-700"
+                :class="[{ 'hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer': clickable }]">
+                <td v-for="column of columns" class="p-2" :class="column.class">
+                    {{ column.formatter !== undefined ? column.formatter(row[colName(column)]) : row[colName(column)] }}
+                </td>
+                <td v-if="clickable" class="p-2 text-center">
+                    <div class="flex items-center justify-center h-full">
+                        <Feather icon="chevron-right" class="h-full" :size="20"/>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -65,6 +78,11 @@ export default defineComponent({
         },
         clickable: {
             type: Boolean,
+            required: false,
+            default: false,
+        },
+        emptyMessage: {
+            type: String,
             required: false,
             default: false,
         }
@@ -137,6 +155,10 @@ export default defineComponent({
             if (this.clickable) {
                 this.$emit('click', id);
             }
+        },
+
+        colName(column) {
+            return column.key === undefined ? column.name.toLowerCase().replaceAll(' ', '_') : column.key;
         }
     },
 

@@ -19,13 +19,17 @@ use Inertia\Inertia;
 */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [\App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->post('/save-notes', [\App\Http\Controllers\DashboardController::class, 'save_notes'])->name('dashboard.save-notes');
 
 Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->name('award.')->prefix('award')->group(function () {
     Route::get('/', [\App\Http\Controllers\AwardController::class, 'show'])->name('index');
 
     Route::get('/membership', [\App\Http\Controllers\MembershipController::class, 'show'])->name('membership.show');
     Route::post('/membership/{id}', [\App\Http\Controllers\MembershipController::class, 'store'])->name('membership.store');
+
+    Route::get('/nights-away', [\App\Http\Controllers\NightsAwayController::class, 'show'])->name('nights-away.show');
+    Route::post('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'store'])->name('nights-away.store');
+    Route::patch('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'patch'])->name('nights-away.patch');
+    Route::delete('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'delete'])->name('nights-away.delete');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');

@@ -28,8 +28,8 @@
             </Message>
             <ValidationErrors class="mt-4"></ValidationErrors>
             <div class="mt-8 text-right w-full mb-6">
-                <Button class="inline bg-navy w-32 hover:bg-navy-darkened disabled:bg-navy-darkened"
-                        :disabled="form.processing" :loading="form.processing">Register
+                <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened"
+                        :disabled="form.processing">Register
                 </Button>
             </div>
         </form>

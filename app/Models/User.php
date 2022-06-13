@@ -13,14 +13,16 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements  MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use HasRoles;
+    use HasRoles {
+        assignRole as assignUserRole;
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -66,5 +68,18 @@ class User extends Authenticatable implements  MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new CustomVerifyEmail());
+    }
+
+    public function qsa_record(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(QsaRecord::class);
+    }
+
+    public function assignRole(...$roles)
+    {
+        $this->assignUserRole(...$roles);
+        if ($this->hasRole('participant')) {
+            $this->qsa_record()->create();
+        }
     }
 }

@@ -1,7 +1,4 @@
 require('./bootstrap');
-window.progressBars = require('./progressBars');
-
-let progressBars = [];
 
 import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/inertia-vue3';
@@ -33,7 +30,7 @@ createInertiaApp({
 
 // Page loading progress bar
 NProgress.configure({
-    template: '<div class="bar bg-navy dark:bg-white w-full fixed top-0 left-0 h-0.5 z-50 shadow-md" role="bar"><div class="peg w-4 h-4 bg-navy rounded-full"></div></div>',
+    template: '<div class="bar bg-navy dark:bg-white w-full fixed top-0 left-0 h-0.5 z-50 shadow-md" role="bar"></div>',
 });
 
 let timeout = null;

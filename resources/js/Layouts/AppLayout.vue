@@ -2,7 +2,7 @@
     <div class="min-h-screen">
         <Head :title="title"/>
         <header
-            class="fixed top-0 left-0 right-0 z-30 h-16 py-4 bg-gray-50 dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+            class="fixed top-0 left-0 right-0 z-30 h-16 py-4 bg-gray-50 dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between h-full px-6 mx-auto text-grey-80 dark:text-grey-5">
                 <Link :href="route('dashboard')">
                     <Logo width="w-24"></Logo>
@@ -72,7 +72,7 @@
         <div class="fixed inset-0 flex">
             <!-- Desktop Sidebar -->
             <aside
-                class="z-20 hidden fixed left-0 bottom-0 top-16 w-64 overflow-y-auto bg-gray-100 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 md:flex flex-shrink-0 shadow cursor-default select-none">
+                class="z-20 hidden fixed left-0 bottom-0 top-16 w-64 overflow-y-auto bg-gray-100 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 md:flex flex-shrink-0 shadow cursor-default select-none">
                 <div class="flex-1 flex flex-col justify-between py-4 text-black dark:text-white">
                     <MainMenu class="mb-3" :permissions="user.permissions"></MainMenu>
                     <div class="inline-block px-6 text-grey-60 text-sm dark:text-grey-20">
@@ -92,7 +92,7 @@
                 leave-from-class="opacity-100"
                 leave-to-class="opacity-0 transform -translate-x-20">
                 <div v-show="showingMobileSidebar"
-                     class="flex fixed inset-y-0 z-50 flex-shrink-0 mt-16 overflow-y-auto bg-gray-100 dark:bg-gray-800 md:hidden min-w-72 max-w-9/10"
+                     class="flex fixed inset-y-0 z-50 flex-shrink-0 mt-16 overflow-y-auto bg-gray-100 dark:bg-black md:hidden min-w-72 max-w-9/10"
                      @click="showingMobileSidebar = false">
                     <aside class="flex flex-1 flex-col justify-between py-4 text-black dark:text-white">
                         <div class="mb-3">
@@ -131,14 +131,14 @@
                 leave-to-class="opacity-0">
                 <div v-show="showingMobileSidebar" class="opacity-100">
                     <div
-                        class="fixed top-16 bottom-0 inset-x-0 z-40 bg-grey-80 opacity-25"
+                        class="fixed top-16 bottom-0 inset-x-0 z-40 bg-grey-80 opacity-25 dark:bg-black dark:opacity-50"
                         @click="showingMobileSidebar = false"></div>
                 </div>
             </transition>
 
             <div class="relative w-full mt-16 md:ml-64">
                 <main>
-                    <div class="absolute inset-0 mx-auto p-6 md:py-10 md:px-10"
+                    <div class="absolute inset-0 container mx-auto p-6 md:py-10 md:px-10" scroll-region
                          :class="{ 'overflow-y-hidden': showingMobileSidebar, 'overflow-y-auto': !showingMobileSidebar }">
                         <slot></slot>
                     </div>

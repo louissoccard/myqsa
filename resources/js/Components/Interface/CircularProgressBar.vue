@@ -1,11 +1,12 @@
 <template>
     <div class="flex flex-col justify-center items-center" :class="containerClass">
-        <div :id="this.id" class="relative max-w-xxs" :class="this.class" :data-percentage="percentage"></div>
+        <div :id="this.id" class="relative max-w-xxs" :class="this.class"></div>
     </div>
 </template>
 
 <script>
 import {defineComponent} from "vue";
+import ProgressBar from "progressbar.js";
 
 export default defineComponent({
     props: {
@@ -32,8 +33,76 @@ export default defineComponent({
         }
     },
 
+    data() {
+        return {
+            bar: null
+        }
+    },
+
     mounted() {
-        progressBars['{{ $barId }}'] = window.progressBars.createProgressCircle('#' + this.id, this.colour);
-    }
+        this.bar = new ProgressBar.Circle('#' + this.id, {
+            color: this.colour,
+            strokeWidth: 6,
+            easing: 'easeInOut',
+            trailColor: 'currentColor',
+            trailWidth: 2,
+            text: {
+                value: 0,
+                style: {
+                    // Text color.
+                    // Default: same as stroke color (options.color)
+                    color: 'unset',
+                    'font-weight': '700',
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
+                    padding: 0,
+                    margin: 0,
+                    // You can specify styles which will be browser prefixed
+                    transform: {
+                        prefix: true,
+                        value: 'translate(-50%, -50%)'
+                    }
+                },
+            },
+
+            duration: 1200,
+            step: function (state, circle) {
+                if (circle.text !== null) {
+                    circle.text.innerHTML = Math.floor(circle.value() * 100) + '%';
+                }
+            }
+        });
+
+        const text = document.querySelector('#' + this.id + ' .progressbar-text');
+        text.classList.add('text-grey-80');
+        text.classList.add('dark:text-grey-5');
+        text.classList.add('md:text-lg');
+
+        const svg = document.querySelector('#' + this.id + ' svg');
+        svg.classList.add('text-grey-20');
+        svg.classList.add('dark:text-grey-60');
+
+        if (this.percentage === null || this.percentage === undefined) this.bar.animate(0.009);
+        else this.setPercentage(this.percentage);
+    },
+
+    methods: {
+      setPercentage(percentage) {
+          if (this.bar !== null) {
+              if (percentage < 1) {
+                  this.bar.animate(0.009);
+              } else {
+                  this.bar.animate(percentage / 100);
+              }
+          }
+      }
+    },
+
+    watch: {
+        percentage(newPercentage, oldPercentage) {
+            this.setPercentage(newPercentage);
+        }
+    },
 })
 </script>

@@ -40,7 +40,7 @@ export default defineComponent({
             default: '48'
         },
         contentClasses: {
-            default: () => ['bg-white', 'dark:bg-gray-800']
+            default: () => ['bg-white', 'dark:bg-gray-900']
         }
     },
 

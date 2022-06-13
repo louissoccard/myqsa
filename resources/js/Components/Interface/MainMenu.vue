@@ -1,10 +1,14 @@
 <template>
     <div>
-        <MainMenuItem :active="route().current('dashboard')" :href="route('dashboard')" icon="layout">Dashboard
+        <MainMenuItem :active="current('dashboard')" :href="route('dashboard')" icon="layout">Dashboard
         </MainMenuItem>
-        <MainMenuItem v-if="permissions.includes('qsa.has')" :active="route().current('award')" :href="route('award')" icon="award">My Award</MainMenuItem>
+
+        <SubMenu v-if="permissions.includes('qsa.has')" :active="current('award.*')" :href="route('award.index')" icon="award">
+            <SubMenuItem active-colour-class="bg-navy" :active="current('award.membership.show')" :href="route('award.membership.show')">Membership</SubMenuItem>
+        </SubMenu>
+
         <MainMenuItem v-if="canAccessMyParticipants" :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>
-        <MainMenuItem v-if="canAccessAdminCentre" :active="route().current('admin-centre.*')" :href="route('admin-centre.index')" icon="grid">Admin Centre</MainMenuItem>
+        <MainMenuItem v-if="canAccessAdminCentre" :active="current('admin-centre.*')" :href="route('admin-centre.index')" icon="grid">Admin Centre</MainMenuItem>
 
         <div class="w-full my-3 px-3">
             <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
@@ -22,10 +26,22 @@
 <script>
 import {defineComponent} from "vue";
 import MainMenuItem from "@/Components/Interface/MainMenuItem";
+import SubMenu from "@/Components/Interface/SubMenu";
+import SubMenuItem from "@/Components/Interface/SubMenuItem";
 
 export default defineComponent({
-    components: {MainMenuItem},
+    components: {SubMenuItem, SubMenu, MainMenuItem},
     props: {permissions: Array},
+    data() {
+      return {
+          currentRoute: this.route().current()
+      }
+    },
+    watch: {
+        '$page.url': function (newUrl, oldUrl) {
+            this.currentRoute = this.route().current()
+        },
+    },
     computed: {
         canAccessMyParticipants() {
             return this.permissions.filter(item => item.match('^participants\..*$')).length > 0;
@@ -33,6 +49,13 @@ export default defineComponent({
 
         canAccessAdminCentre() {
             return this.permissions.filter(item => item.match('^admin-centre\..*$')).length > 0;
+        }
+    },
+    methods: {
+        current(route) {
+            if (route === this.currentRoute) return true;
+            else if (route.charAt(route.length - 1) === '*' && this.currentRoute.startsWith(route.substring(0, route.length - 1))) return true;
+            return false;
         }
     }
 })

@@ -10,7 +10,10 @@ use Inertia\Inertia;
 class DashboardController extends Controller
 {
     public function show(Request $request) {
-        return Inertia::render("App/Dashboard", ['notes' => $request->user()->notes]);
+        return Inertia::render("App/Dashboard", [
+            'percentages' => $request->user()->qsa_record->percentages(),
+            'notes' => $request->user()->notes,
+        ]);
     }
 
     public function save_notes(Request $request) {

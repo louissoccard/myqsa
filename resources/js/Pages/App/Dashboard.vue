@@ -2,27 +2,27 @@
     <Head title="Dashboard" />
 
     <h2 class="font-bold text-2xl mb-4">Good {{ timeOfDay }}, {{ user.first_name }}</h2>
-    <Card title="Queen's Scout Award" :href="route('award')" class="mb-4" v-if="user.permissions.includes('qsa.has')">
+    <Card title="Queen's Scout Award" :href="route('award.index')" class="mb-4" v-if="user.permissions.includes('qsa.has')">
         <div class="flex flex-row flex-wrap lg:flex-nowrap lg:justify-center items-start mt-8 lg:space-x-6">
             <ProgressBar section="Membership" colour="#003982" class="mb-6 lg:mb-0 sm:pr-3 lg:pr-0"
-                                      :percentage="25">
+                                      :percentage="percentages.membership">
                 Membership
             </ProgressBar>
             <ProgressBar section="Nights Away" colour="#00a794" class="mb-6 lg:mb-0 sm:pl-3 lg:pr-0"
-                                      :percentage="100">
+                                      :percentage="percentages.nights_away">
                 Nights Away
             </ProgressBar>
             <ProgressBar section="ICV List" colour="#ffb4e5" class="mb-6 lg:mb-0 sm:pr-3 lg:pr-0"
-                                      :percentage="50">
+                                      :percentage="percentages.icv_list">
                 ICV
                 List
             </ProgressBar>
             <ProgressBar section="DofE" colour="#ffe627" class="mb-6 lg:mb-0 sm:pl-3 lg:pr-0"
-                                      :percentage="75">
+                                      :percentage="percentages.dofe">
                 DofE
             </ProgressBar>
             <ProgressBar section="Presentation" colour="#7413dc" class="sm:pr-3 lg:pr-0"
-                                      :percentage="0">
+                                      :percentage="percentages.presentation">
                 Presentation
             </ProgressBar>
         </div>
@@ -31,7 +31,7 @@
     <div class="flex flex-col lg:flex-row lg:space-x-4 items-stretch">
         <Card title="My Notes" class="lg:w-1/2 mb-4 lg:mb-0">
             <form class="flex flex-col items-end flex-1 py-4" @submit.prevent="submit">
-                <TextArea id="notes" container-class="flex w-full flex-1" class="flex-1 resize-none overflow-y-auto min-h-28 dark:bg-gray-700" v-model="form.notes"></TextArea>
+                <TextArea id="notes" container-class="flex w-full flex-1" class="flex-1 resize-none overflow-y-auto min-h-28" v-model="form.notes"></TextArea>
                 <Button class="inline bg-navy hover:bg-navy-darkened disabled:bg-navy-darkened text-sm w-24 mt-2"
                         :disabled="form.processing" :loading="form.processing">Save
                 </Button>
@@ -64,6 +64,7 @@ export default defineComponent({
     props: {
         user: Object,
         notes: String,
+        percentages: Object,
     },
 
     computed: {

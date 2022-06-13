@@ -1,44 +1,67 @@
 <template>
     <div class="text-left">
-        <label class="block" :class="{'hidden': hideLabel}" :for="id">{{ label }}</label>
-        <input :id="id" class="block w-full bg-gray-100 dark:bg-gray-800 rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1" :class="inputClass" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input" :type="type">
+        <div class="flex justify-between">
+            <label class="block" :class="{'hidden': hideLabel}" :for="id">{{ label }}</label>
+            <Transition enter-active-class="ease-out duration-300"
+                        enter-from-class="opacity-0"
+                        enter-to-class="opacity-100"
+                        leave-active-class="ease-in duration-200"
+                        leave-from-class="opacity-100"
+                        leave-to-class="opacity-0">
+                <p v-if="saved === true" class="ml-2 text-green">Saved</p>
+                <p v-else-if="saved === false" class="ml-2 text-red">Saving Failed</p>
+            </Transition>
+        </div>
+        <input :id="id"
+               class="block w-full bg-gray-100 dark:bg-gray-900 rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1 appearance-none"
+               :class="inputClass" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
+               ref="input" :type="type" :placeholder="placeholder">
         <slot></slot>
     </div>
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 
-    export default defineComponent({
-        props: {
-            modelValue: String,
-            id: {
-                type: String,
-                required: true,
-            },
+export default defineComponent({
+    props: {
+        modelValue: String,
+        id: {
             type: String,
-            label: {
-                type: String,
-                required: true,
-            },
-            inputClass: {
-                type: String,
-                required: false,
-                default: '',
-            },
-            hideLabel: {
-                type: Boolean,
-                required: false,
-                default: false,
-            }
+            required: true,
         },
-
-        emits: ['update:modelValue'],
-
-        methods: {
-            focus() {
-                this.$refs.input.focus()
-            }
+        type: String,
+        label: {
+            type: String,
+            required: true,
+        },
+        inputClass: {
+            type: String,
+            required: false,
+            default: '',
+        },
+        hideLabel: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
+        placeholder: {
+            type: String,
+            required: false,
+        },
+        saved: {
+            type: Boolean,
+            required: false,
+            default: null,
         }
-    })
+    },
+
+    emits: ['update:modelValue'],
+
+    methods: {
+        focus() {
+            this.$refs.input.focus()
+        }
+    }
+})
 </script>

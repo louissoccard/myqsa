@@ -13,8 +13,8 @@
             </Transition>
         </div>
         <textarea :id="id"
-                  class="block w-full bg-gray-100 dark:bg-gray-800 border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1"
-                  :class="this.class" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
+                  class="block w-full border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1"
+                  :class="[this.class, bg]" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
                   :rows="rows" :placeholder="placeholder" :maxlength="characterLimit" ref="textarea"></textarea>
         <p class="text-sm text-right w-full py-1 px-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" v-if="characterLimit">{{ modelValue.length }}/{{ characterLimit }}</p>
     </div>
@@ -37,6 +37,11 @@ export default defineComponent({
         class: {
             type: String,
             required: false,
+        },
+        bg: {
+          type: String,
+          required: false,
+          default: 'bg-gray-100 dark:bg-gray-800',
         },
         containerClass: {
             type: String,

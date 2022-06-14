@@ -13,8 +13,8 @@
             </Transition>
         </div>
         <input :id="id"
-               class="block w-full bg-gray-100 dark:bg-gray-800 rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1 appearance-none"
-               :class="inputClass" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
+               class="block w-full rounded-none border-2 border-transparent focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1 appearance-none"
+               :class="[inputClass, bg]" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
                ref="input" :type="type" :placeholder="placeholder">
         <slot></slot>
     </div>
@@ -39,6 +39,11 @@ export default defineComponent({
             type: String,
             required: false,
             default: '',
+        },
+        bg: {
+          type: String,
+          required: false,
+          default: 'bg-gray-100 dark:bg-gray-800',
         },
         hideLabel: {
             type: Boolean,

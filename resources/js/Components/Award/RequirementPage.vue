@@ -17,7 +17,7 @@
                     <p>Status: Draft</p>
                 </template>
                 <form class="text-right">
-                    <TextArea id="approval-message" label="Comments" rows="4" class="mb-3"
+                    <TextArea id="approval-message" label="Comments" rows="4" class="mb-3" bg="bg-white dark:bg-gray-800"
                               placeholder="Enter your comments here..."></TextArea>
                     <Button :class="buttonColourClasses">Submit</Button>
                 </form>

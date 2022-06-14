@@ -20,6 +20,43 @@ class UserSeeder extends Seeder
         $participant->save();
         $participant->assignRole("participant");
 
+        // Pre-fill certain parts of the award
+        $participant->qsa_record->date_of_birth = '2004-04-09';
+        $participant->qsa_record->explorers_start = '2021-02-09';
+        $participant->qsa_record->save();
+        $participant->qsa_record->nights_away()->create([
+            'name' => 'Beavers Sleepover',
+            'start_date' => '2021-11-06',
+            'type' => 'Indoors',
+            'number_of_nights' => 1,
+        ]);
+        $participant->qsa_record->nights_away()->create([
+            'name' => 'Cub Camp',
+            'start_date' => '2021-07-09',
+            'type' => 'Camping',
+            'number_of_nights' => 2,
+        ]);
+        $participant->qsa_record->nights_away()->create([
+            'name' => 'Explorer Camp',
+            'start_date' => '2021-08-08',
+            'type' => 'Camping',
+            'number_of_nights' => 6,
+        ]);
+        $participant->qsa_record->icv_activities()->create([
+            'category' => 'International',
+            'start_date' => '2021-04-04',
+            'end_date' => '2021-06-23',
+            'description' => 'Ran four sessions for my Cub pack about China, exploring local Scouting and their culture.',
+            'part_of_csa' => true,
+        ]);
+        $participant->qsa_record->icv_activities()->create([
+            'category' => 'Community',
+            'start_date' => '2021-09-12',
+            'end_date' => '2021-09-13',
+            'description' => 'Ran an overnight litter picking competition for local Explorer units with a prize for the largest collection.',
+            'part_of_csa' => false,
+        ]);
+
         $admin = User::create(['first_name' => 'Mike', 'last_name' => 'Baxter', 'email' => 'admin@myqsa.local', 'password' => Hash::make('password'), 'district_id' => 1]);
         $admin->email_verified_at = now();
         $admin->save();

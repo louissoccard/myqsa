@@ -1,5 +1,7 @@
 <template>
-    <Head title="Nights Away"/>
+    <Head>
+        <title>Nights Away</title>
+    </Head>
     <RequirementPage title="Nights Away" accent="teal" :progress-percentage="progressPercentage"
                      :progress-message="progressMessage"
                      :completion-message="completionMessage">
@@ -105,8 +107,6 @@
 </template>
 
 <script>
-import _ from "lodash";
-
 import {defineComponent} from "vue";
 import RequirementPage from "@/Components/Award/RequirementPage";
 import {Head} from "@inertiajs/inertia-vue3";
@@ -214,7 +214,7 @@ export default defineComponent({
             return this.nights_away.reduce((acc, x) => acc + (x.type === 'Indoors' ? x.number_of_nights : 0), 0);
         },
         progressPercentage() {
-            return ((this.numberOfCamping + Math.min(6, this.numberOfIndoors)) / 18) * 100;
+            return Math.ceil(((this.numberOfCamping + Math.min(6, this.numberOfIndoors)) / 18) * 100);
         },
         progressMessage() {
             if (this.numberOfCamping === 0 && this.numberOfIndoors === 0) return 'You have completed 0 nights away';

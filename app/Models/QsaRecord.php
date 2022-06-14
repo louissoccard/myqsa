@@ -20,11 +20,16 @@ class QsaRecord extends Model
         return $this->hasMany(NightsAwayEvent::class);
     }
 
+    public function icv_activities(): HasMany
+    {
+        return $this->hasMany(IcvActivity::class);
+    }
+
     public function percentages(): array {
         return [
             'membership' => $this->membership_percentage(),
             'nights_away' => $this->nights_away_percentage(),
-            'icv_list' => 0,
+            'icv_list' => $this->icv_list_percentage(),
             'dofe' => 0,
             'presentation' => 0,
         ];
@@ -67,14 +72,27 @@ class QsaRecord extends Model
             $networkMonths = $this->calculate_difference_between_dates_in_months($startDate, $endDate);
         }
 
-        return min(100, (($explorerMonths + $networkMonths) / 18) * 100);
+        return ceil(min(100, (($explorerMonths + $networkMonths) / 18) * 100));
     }
 
     private function nights_away_percentage(): int
     {
         $camping = $this->nights_away->where('type', 'Camping')->sum('number_of_nights');
-        $indoors = $this->nights_away->where('type', 'Indoors')->sum('number_of_nights');
+        $indoors = min(6, $this->nights_away->where('type', 'Indoors')->sum('number_of_nights'));
 
-        return min(100, (($camping + $indoors) / 18) * 100);
+        return ceil(min(100, (($camping + $indoors) / 18) * 100));
+    }
+
+    private function icv_list_percentage(): int
+    {
+        $international = min(2, $this->icv_activities->where('category', 'International')->count());
+        $community = min(2, $this->icv_activities->where('category', 'Community')->count());
+        $values = min(2, $this->icv_activities->where('category', 'Values')->count());
+        $total = $international + $community + $values;
+
+        $from_qsa_list = 4 + min(2, $this->icv_activities->where('part_of_csa', false)->count());
+        $total = min($total, $from_qsa_list);
+
+        return ceil(min(100, ($total / 6) * 100));
     }
 }

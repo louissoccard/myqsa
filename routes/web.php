@@ -30,6 +30,11 @@ Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->name('award.')->
     Route::post('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'store'])->name('nights-away.store');
     Route::patch('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'patch'])->name('nights-away.patch');
     Route::delete('/nights-away/{id}', [\App\Http\Controllers\NightsAwayController::class, 'delete'])->name('nights-away.delete');
+
+    Route::get('/icv-list', [\App\Http\Controllers\ICVListController::class, 'show'])->name('icv-list.show');
+    Route::post('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'store'])->name('icv-list.store');
+    Route::patch('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'patch'])->name('icv-list.patch');
+    Route::delete('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'delete'])->name('icv-list.delete');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');

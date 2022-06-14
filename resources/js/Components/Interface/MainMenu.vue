@@ -6,6 +6,7 @@
         <SubMenu v-if="permissions.includes('qsa.has')" :active="current('award.*')" :href="route('award.index')" icon="award">
             <SubMenuItem active-colour-class="bg-navy" :active="current('award.membership.show')" :href="route('award.membership.show')">Membership</SubMenuItem>
             <SubMenuItem active-colour-class="bg-teal" :active="current('award.nights-away.show')" :href="route('award.nights-away.show')">Nights Away</SubMenuItem>
+            <SubMenuItem active-colour-class="bg-pink" :active="current('award.icv-list.show')" :href="route('award.icv-list.show')">ICV List</SubMenuItem>
         </SubMenu>
 
         <MainMenuItem v-if="canAccessMyParticipants" :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>
@@ -39,7 +40,7 @@ export default defineComponent({
       }
     },
     watch: {
-        '$page.url': function (newUrl, oldUrl) {
+        '$page.url': function () {
             this.currentRoute = this.route().current()
         },
     },

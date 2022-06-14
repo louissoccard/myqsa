@@ -1,5 +1,7 @@
 <template>
-    <Head title="Award" />
+    <Head>
+        <title>Award</title>
+    </Head>
 
     <h2 class="font-bold text-2xl mb-4">Your Queen's Scout Award</h2>
 
@@ -25,14 +27,13 @@
             You must:<br>
             Complete 18 nights away as an Explorer Scout or Scout Network member, of which at least 12 must be camping.
         </Card>
-<!--        <Card title="ICV List" :href="route('award.icv-list.show')" progressBarId="icv-progress"-->
-<!--                      :percentage="percentages.icv_list"-->
-<!--                      colour="#ffb4e5" class="xl:pr-2 mb-4">-->
-<!--            You must:<br>-->
-<!--            Complete six activities in total, two from each topic area of the ICV activities list. A minimum of two must be from the QSA ICV list and the others from any of the QSA, or-->
-<!--            Chief-->
-<!--            Scout Platinum or Diamond ICV lists.-->
-<!--        </Card>-->
+        <Card title="ICV List" :href="route('award.icv-list.show')" progressBarId="icv-progress"
+                      :percentage="percentages.icv_list"
+                      colour="#ffb4e5" class="xl:pr-2 mb-4">
+            You must:<br>
+            Complete six activities in total, two from each topic area of the ICV activities list. A minimum of two must be from the QSA ICV list and the others from any of the QSA, or
+            Chief Scout Platinum or Diamond ICV lists.
+        </Card>
 <!--        <Card title="DofE" :href="route('award.dofe.show')" progressBarId="dofe-progress"-->
 <!--                      :percentage="percentages.dofe"-->
 <!--                      colour="#ffe627" class="xl:pl-2 mb-4">-->

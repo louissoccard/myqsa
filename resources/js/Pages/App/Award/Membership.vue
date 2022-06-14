@@ -1,5 +1,7 @@
 <template>
-    <Head title="Membership"/>
+    <Head>
+        <title>Membership</title>
+    </Head>
     <RequirementPage title="Membership" accent="navy" :progress-percentage="progressPercentage"
                      :progress-message="progressMessage"
                      :completion-message="completionMessage">
@@ -128,7 +130,14 @@ export default defineComponent({
         },
 
         updateCompletion() {
-            if (this.date_of_birth.value === null) return;
+            if (this.date_of_birth.value === null) {
+                this.progressPercentage = 0;
+                this.progressMessage = 'You have completed 0 months';
+                this.completionMessage = 'Remain in Scouting for another 18 months';
+
+                return;
+            }
+
             let sixteenthBirthday = this.date(this.date_of_birth.value);
             sixteenthBirthday.setFullYear(sixteenthBirthday.getFullYear() + 16);
             let eighteenthBirthday = this.date(this.date_of_birth.value);
@@ -163,7 +172,7 @@ export default defineComponent({
             networkMonthsRemaining = Math.min(18 - networkMonthsCompleted - (explorerMonthsCompleted + explorerMonthsRemaining), this.calculateMonths(new Date(), twentyFifthBirthday));
 
             let monthsCompleted = explorerMonthsCompleted + networkMonthsCompleted;
-            this.progressPercentage = Math.min(100, (monthsCompleted / 18) * 100);
+            this.progressPercentage = Math.ceil(Math.min(100, (monthsCompleted / 18) * 100));
             this.progressMessage = 'You have completed ' + monthsCompleted + ' ' + (monthsCompleted === 1 ? 'month' : 'months');
 
             if (monthsCompleted === 0) {

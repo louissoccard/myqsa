@@ -1,9 +1,11 @@
 <template>
-    <Head title="Manage Users - Admin Centre"/>
+    <Head>
+        <title>Manage Users - Admin Centre</title>
+    </Head>
 
     <h2 class="font-bold text-2xl">Manage Users</h2>
     <p class="mb-4">Use this page to create and manage all users.</p>
-    <Table
+    <Table empty-message="No users to show"
         :columns="[{name: 'Name', sortable: true, searchable: true}, {name: 'District', sortable: true, searchable: true}]"
         :table-data="usersTable" :numbered="true" :clickable="true" @click="rowClicked">
         <template #header>
@@ -78,7 +80,7 @@
                     <div class="w-full" v-if="manageUser.id !== user.id">
                         <MenuItem icon="clipboard" @click="openEditModal">Edit Details</MenuItem>
                         <MenuItem icon="unlock" @click="showResetPasswordModal = true">Reset Password</MenuItem>
-                        <MenuItem icon="award" :href="route('award', {id: manageUser.id})">View Award</MenuItem>
+                        <MenuItem icon="award" href="/">View Award</MenuItem>
                         <MenuItem icon="trash-2" class="bg-red hover:bg-red-darkened text-white font-bold"
                                   @click="showDeleteModal = true">Delete Account
                         </MenuItem>

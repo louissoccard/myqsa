@@ -38,7 +38,7 @@
             </tr>
             <tr v-for="row of filterTableData(tableData)" :key="row.id" @click="emitClick(row.id)"
                 class="border-b border-gray-200 dark:border-gray-700"
-                :class="[{ 'hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer': clickable }]">
+                :class="[{ 'hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer': clickable }]">
                 <td v-for="column of columns" class="p-2" :class="column.class">
                     {{ column.formatter !== undefined ? column.formatter(row[colName(column)]) : row[colName(column)] }}
                 </td>

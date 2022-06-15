@@ -1,5 +1,5 @@
 <template>
-    <a class="flex flex-row justify-between items-center hover:bg-gray-200 dark:hover:bg-gray-900 cursor-pointer px-4 py-2">
+    <a class="flex flex-row justify-between items-center hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer px-4 py-2">
         <div class="inline-block">
             <div>
                 <h4 class="text-lg"><slot></slot></h4>

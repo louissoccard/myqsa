@@ -172,7 +172,7 @@ export default defineComponent({
             networkMonthsRemaining = Math.min(18 - networkMonthsCompleted - (explorerMonthsCompleted + explorerMonthsRemaining), this.calculateMonths(new Date(), twentyFifthBirthday));
 
             let monthsCompleted = explorerMonthsCompleted + networkMonthsCompleted;
-            this.progressPercentage = Math.ceil(Math.min(100, (monthsCompleted / 18) * 100));
+            this.progressPercentage = Math.floor(Math.min(100, (monthsCompleted / 18) * 100));
             this.progressMessage = 'You have completed ' + monthsCompleted + ' ' + (monthsCompleted === 1 ? 'month' : 'months');
 
             if (monthsCompleted === 0) {

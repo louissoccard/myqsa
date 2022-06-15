@@ -214,7 +214,7 @@ export default defineComponent({
             return this.nights_away.reduce((acc, x) => acc + (x.type === 'Indoors' ? x.number_of_nights : 0), 0);
         },
         progressPercentage() {
-            return Math.ceil(((this.numberOfCamping + Math.min(6, this.numberOfIndoors)) / 18) * 100);
+            return Math.floor(((this.numberOfCamping + Math.min(6, this.numberOfIndoors)) / 18) * 100);
         },
         progressMessage() {
             if (this.numberOfCamping === 0 && this.numberOfIndoors === 0) return 'You have completed 0 nights away';

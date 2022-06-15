@@ -283,7 +283,7 @@ export default defineComponent({
             let total = Math.min(2, this.numberOfInternational) + Math.min(2, this.numberOfCommunity) + Math.min(2, this.numberOfValues);
             total = Math.min(total, 4 + Math.min(2, this.numberOfQsaList));
 
-            return Math.ceil((total / 6) * 100);
+            return Math.floor((total / 6) * 100);
         },
         progressMessage() {
             let message = [];

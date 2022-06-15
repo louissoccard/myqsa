@@ -72,7 +72,7 @@ class QsaRecord extends Model
             $networkMonths = $this->calculate_difference_between_dates_in_months($startDate, $endDate);
         }
 
-        return ceil(min(100, (($explorerMonths + $networkMonths) / 18) * 100));
+        return floor(min(100, (($explorerMonths + $networkMonths) / 18) * 100));
     }
 
     private function nights_away_percentage(): int
@@ -80,7 +80,7 @@ class QsaRecord extends Model
         $camping = $this->nights_away->where('type', 'Camping')->sum('number_of_nights');
         $indoors = min(6, $this->nights_away->where('type', 'Indoors')->sum('number_of_nights'));
 
-        return ceil(min(100, (($camping + $indoors) / 18) * 100));
+        return floor(min(100, (($camping + $indoors) / 18) * 100));
     }
 
     private function icv_list_percentage(): int
@@ -93,6 +93,6 @@ class QsaRecord extends Model
         $from_qsa_list = 4 + min(2, $this->icv_activities->where('part_of_csa', false)->count());
         $total = min($total, $from_qsa_list);
 
-        return ceil(min(100, ($total / 6) * 100));
+        return floor(min(100, ($total / 6) * 100));
     }
 }

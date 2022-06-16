@@ -1,5 +1,7 @@
 <template>
-    <Head title="Dashboard" />
+    <Head>
+        <title>Dashboard</title>
+    </Head>
 
     <h2 class="font-bold text-2xl mb-4">Good {{ timeOfDay }}, {{ user.first_name }}</h2>
     <Card title="Queen's Scout Award" :href="route('award.index')" class="mb-4" v-if="user.permissions.includes('qsa.has')">
@@ -29,7 +31,8 @@
     </Card>
 
     <div class="flex flex-col lg:flex-row lg:space-x-4 items-stretch">
-        <Card title="To Fill" class="lg:w-1/2 mb-4 lg:mb-0">
+        <Card title="Tips & Advice" class="lg:w-1/2 mb-4 lg:mb-0">
+            <ListItem :title="tip.title" :description="tip.description" v-for="tip of tips" :key="tip.title" />
         </Card>
 
         <Card title="Updates & Announcements" class="lg:w-1/2">
@@ -50,9 +53,10 @@ import Card from "@/Components/Interface/Card";
 import ProgressBar from "@/Components/Dashboard/ProgressBar";
 import Notification from "@/Components/Interface/Notification";
 import Feather from "@/Components/Feather";
+import ListItem from "@/Components/Interface/ListItem";
 
 export default defineComponent({
-    components: {Head, Notification, ProgressBar, Card, Feather},
+    components: {Head, Notification, ProgressBar, Card, Feather, ListItem},
     props: {
         user: Object,
         percentages: Object,
@@ -75,6 +79,11 @@ export default defineComponent({
 
     data() {
         return {
+            tips: [
+                {"title": "Not sure where to start?", "description": "Here's a comprehensive guide on achieving your Queen's Scout Award."},
+                {"title": "Struggling with your ICV activities?", "description": "Take a look at some useful advice for selecting activities."},
+                {"title": "Getting started with your presentation", "description": "Look through some examples and get advice from award holders."},
+            ],
             announcements: [
                 {"title": "Upcoming Maintenance", "daysPast": 0, "colour": "bg-red"},
                 {"title": "ICV List Zoom Session", "daysPast": 3, "colour": "bg-green"},

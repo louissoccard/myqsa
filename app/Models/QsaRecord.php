@@ -109,6 +109,6 @@ class QsaRecord extends Model
             else if ($value === 'Complete') $total += 15;
         }
 
-        return 35;
+        return $total;
     }
 }

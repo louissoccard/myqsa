@@ -23,6 +23,9 @@ class UserSeeder extends Seeder
         // Pre-fill certain parts of the award
         $participant->qsa_record->date_of_birth = '2004-04-09';
         $participant->qsa_record->explorers_start = '2021-02-09';
+        $participant->qsa_record->dofe_volunteering = 'In Progress';
+        $participant->qsa_record->dofe_skills = 'Complete';
+        $participant->qsa_record->dofe_expedition = 'Complete';
         $participant->qsa_record->save();
         $participant->qsa_record->nights_away()->create([
             'name' => 'Beavers Sleepover',

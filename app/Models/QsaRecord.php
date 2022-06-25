@@ -25,12 +25,13 @@ class QsaRecord extends Model
         return $this->hasMany(IcvActivity::class);
     }
 
-    public function percentages(): array {
+    public function percentages(): array
+    {
         return [
             'membership' => $this->membership_percentage(),
             'nights_away' => $this->nights_away_percentage(),
             'icv_list' => $this->icv_list_percentage(),
-            'dofe' => 0,
+            'dofe' => $this->dofe_percentage(),
             'presentation' => 0,
         ];
     }
@@ -48,7 +49,8 @@ class QsaRecord extends Model
         return max(0, $months - 1);
     }
 
-    private function membership_percentage(): int {
+    private function membership_percentage(): int
+    {
         $explorerMonths = 0;
         $networkMonths = 0;
 
@@ -94,5 +96,19 @@ class QsaRecord extends Model
         $total = min($total, $from_qsa_list);
 
         return floor(min(100, ($total / 6) * 100));
+    }
+
+    private function dofe_percentage(): int
+    {
+        if ($this->dofe_completion !== null) return 100;
+
+        $total = 0;
+
+        foreach ([$this->dofe_volunteering, $this->dofe_physical, $this->dofe_skills, $this->dofe_expedition, $this->dofe_residential] as $value) {
+            if ($value === 'In Progress') $total += 5;
+            else if ($value === 'Complete') $total += 15;
+        }
+
+        return 35;
     }
 }

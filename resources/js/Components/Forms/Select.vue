@@ -1,6 +1,17 @@
 <template>
     <div class="text-left">
-        <label class="block" :for="id">{{ label }}</label>
+        <div class="flex justify-between">
+            <label class="block" :for="id">{{ label }}</label>
+            <Transition enter-active-class="ease-out duration-300"
+                        enter-from-class="opacity-0"
+                        enter-to-class="opacity-100"
+                        leave-active-class="ease-in duration-200"
+                        leave-from-class="opacity-100"
+                        leave-to-class="opacity-0">
+                <p v-if="saved === true" class="ml-2 text-green">Saved</p>
+                <p v-else-if="saved === false" class="ml-2 text-red">Saving Failed</p>
+            </Transition>
+        </div>
         <div class="flex flex-row">
             <select :id="id"
                     class="appearance-none cursor-pointer block w-full bg-gray-100 dark:bg-gray-800 border-2 border-transparent rounded-none focus:border-navy focus:dark:border-gray-500 focus:outline-none focus:ring-0 px-2 py-1"
@@ -33,6 +44,11 @@ export default defineComponent({
             type: String,
             required: true,
         },
+        saved: {
+            type: Boolean,
+            required: false,
+            default: null,
+        }
     },
 
     emits: ['update:modelValue'],

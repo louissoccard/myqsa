@@ -15,8 +15,8 @@ export default defineComponent({
             required: true
         },
         percentage: {
-          type: Number,
-          required: true,
+            type: Number,
+            required: true,
         },
         colour: {
             type: String,
@@ -88,19 +88,15 @@ export default defineComponent({
     },
 
     methods: {
-      setPercentage(percentage) {
-          if (this.bar !== null) {
-              if (percentage < 1) {
-                  this.bar.animate(0.009);
-              } else {
-                  this.bar.animate(percentage / 100);
-              }
-          }
-      }
+        setPercentage(percentage) {
+            if (this.bar !== null) {
+                this.bar.animate(Math.min(1, (percentage / 100) + 0.009));
+            }
+        }
     },
 
     watch: {
-        percentage(newPercentage, oldPercentage) {
+        percentage(newPercentage) {
             this.setPercentage(newPercentage);
         }
     },

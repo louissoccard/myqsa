@@ -7,6 +7,7 @@
             <SubMenuItem active-colour-class="bg-navy" :active="current('award.membership.show')" :href="route('award.membership.show')">Membership</SubMenuItem>
             <SubMenuItem active-colour-class="bg-teal" :active="current('award.nights-away.show')" :href="route('award.nights-away.show')">Nights Away</SubMenuItem>
             <SubMenuItem active-colour-class="bg-pink" :active="current('award.icv-list.show')" :href="route('award.icv-list.show')">ICV List</SubMenuItem>
+            <SubMenuItem active-colour-class="bg-yellow" :active="current('award.dofe.show')" :href="route('award.dofe.show')">DofE</SubMenuItem>
         </SubMenu>
 
         <MainMenuItem v-if="canAccessMyParticipants" :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>

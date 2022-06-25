@@ -34,12 +34,12 @@
             Complete six activities in total, two from each topic area of the ICV activities list. A minimum of two must be from the QSA ICV list and the others from any of the QSA, or
             Chief Scout Platinum or Diamond ICV lists.
         </Card>
-<!--        <Card title="DofE" :href="route('award.dofe.show')" progressBarId="dofe-progress"-->
-<!--                      :percentage="percentages.dofe"-->
-<!--                      colour="#ffe627" class="xl:pl-2 mb-4">-->
-<!--            You must:<br>-->
-<!--            Hold the Gold Duke of Edinburgh's Award.-->
-<!--        </Card>-->
+        <Card title="DofE" :href="route('award.dofe.show')" progressBarId="dofe-progress"
+                      :percentage="percentages.dofe"
+                      colour="#ffe627" class="xl:pl-2 mb-4">
+            You must:<br>
+            Hold the Gold Duke of Edinburgh's Award.
+        </Card>
 <!--        <Card title="Presentation" :href="route('award.presentation.show')" progressBarId="presentation-progress"-->
 <!--                      :percentage="percentages.presentation"-->
 <!--                      colour="#7413dc" class="xl:pr-2 mb-4 xl:mb-0">-->

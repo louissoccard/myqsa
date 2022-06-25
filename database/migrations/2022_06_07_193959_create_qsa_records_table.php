@@ -21,6 +21,14 @@ class CreateQsaRecordsTable extends Migration
             $table->date('explorers_end')->nullable();
             $table->date('network_start')->nullable();
             $table->date('network_end')->nullable();
+            $table->string('dofe_organisation')->nullable();
+            $table->string('dofe_number')->nullable();
+            $table->date('dofe_completion')->nullable();
+            $table->enum('dofe_volunteering', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
+            $table->enum('dofe_physical', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
+            $table->enum('dofe_skills', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
+            $table->enum('dofe_expedition', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
+            $table->enum('dofe_residential', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
             $table->timestamps();
         });
     }

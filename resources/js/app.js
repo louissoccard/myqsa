@@ -8,6 +8,16 @@ import { Inertia } from "@inertiajs/inertia";
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText;
 
+let sentenceBuilder = function (parts) {
+    let sentence = '';
+    let sentenceParts = [...parts].reverse();
+
+    while (sentenceParts.length >= 3) sentence += sentenceParts.pop() + ', ';
+    if (sentenceParts.length === 2) sentence += sentenceParts.pop() + ' and ';
+    if (sentenceParts.length === 1) sentence += sentenceParts.pop();
+
+    return sentence;
+};
 
 createInertiaApp({
     title: (title) => `${title} | ${appName}`,
@@ -24,13 +34,14 @@ createInertiaApp({
         return createApp({render: () => h(app, props)})
             .use(plugin)
             .mixin({methods: {route}})
+            .mixin({methods: {sentenceBuilder}})
             .mount(el);
     },
 });
 
 // Page loading progress bar
 NProgress.configure({
-    template: '<div class="bar bg-navy dark:bg-white w-full fixed top-0 left-0 h-0.5 z-50 shadow-md" role="bar"></div>',
+    template: '<div class="bar bg-navy dark:bg-white w-full fixed top-0 left-0 h-0.5 z-50 shadow-md"></div>',
 });
 
 let timeout = null;
@@ -48,7 +59,7 @@ Inertia.on('progress', (event) => {
 Inertia.on('finish', (event) => {
     clearTimeout(timeout);
     if (!NProgress.isStarted()) {
-        return;
+        // Do nothing
     } else if (event.detail.visit.completed) {
         NProgress.done();
     } else if (event.detail.visit.interrupted) {

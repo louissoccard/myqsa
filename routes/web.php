@@ -35,6 +35,9 @@ Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->name('award.')->
     Route::post('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'store'])->name('icv-list.store');
     Route::patch('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'patch'])->name('icv-list.patch');
     Route::delete('/icv-list/{id}', [\App\Http\Controllers\ICVListController::class, 'delete'])->name('icv-list.delete');
+
+    Route::get('/dofe', [\App\Http\Controllers\DofeController::class, 'show'])->name('dofe.show');
+    Route::post('/dofe/{id}', [\App\Http\Controllers\DofeController::class, 'store'])->name('dofe.store');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');

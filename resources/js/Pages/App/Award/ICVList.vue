@@ -254,16 +254,6 @@ export default defineComponent({
             if (description.length < 25) return description;
             else return description.substring(0, 25) + '...';
         },
-        buildSentence(parts) {
-            let sentence = '';
-            let sentenceParts = parts.reverse();
-
-            if (sentenceParts.length === 3) sentence += sentenceParts[2] + ', ';
-            if (sentenceParts.length >= 2) sentence += sentenceParts[1] + ' and ';
-            if (sentenceParts.length >= 1) sentence += sentenceParts[0];
-
-            return sentence;
-        }
     },
 
     computed: {
@@ -293,7 +283,7 @@ export default defineComponent({
             if (this.numberOfValues > 0) message.push(`${this.numberOfValues} values activit${this.numberOfValues === 1 ? 'y' : 'ies'}`);
 
             if (message.length === 0) return 'You have not completed any ICV activities';
-            else return 'You have completed ' + this.buildSentence(message);
+            else return 'You have completed ' + this.sentenceBuilder(message);
         },
         completionMessage() {
             let message = [];
@@ -305,7 +295,7 @@ export default defineComponent({
             if (this.numberOfQsaList === 0) listMessage = 'Two of your activities must be from the QSA ICV list';
             if (this.numberOfQsaList === 1) listMessage = 'One of your activities must be from the QSA ICV list';
 
-            return (message.length > 0 ? 'You must complete ' : '') + this.buildSentence(message) + (listMessage !== '' && message.length > 0 ? '. ' : '') + listMessage;
+            return (message.length > 0 ? 'You must complete ' : '') + this.sentenceBuilder(message) + (listMessage !== '' && message.length > 0 ? '. ' : '') + listMessage;
         }
     }
 })

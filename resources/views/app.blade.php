@@ -19,8 +19,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-        <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)">
+        <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
         <!-- Scripts -->
         @routes

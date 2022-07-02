@@ -1,6 +1,8 @@
 <template>
     <div class="min-h-screen">
-        <Head :title="title"/>
+        <Head>
+            <title>{{ title }}</title>
+        </Head>
         <header
             class="fixed top-0 left-0 right-0 z-30 h-16 py-4 bg-gray-50 dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700">
             <div class="flex items-center justify-between h-full px-6 mx-auto text-grey-80 dark:text-grey-5">
@@ -179,6 +181,16 @@ export default defineComponent({
         return {
             showingMobileSidebar: false,
         }
+    },
+
+    mounted() {
+        document.querySelector('meta[media="(prefers-color-scheme: light)"]').setAttribute('content', '#fafafa');
+        document.querySelector('meta[media="(prefers-color-scheme: dark)"]').setAttribute('content', '#171717');
+    },
+
+    unmounted() {
+        document.querySelector('meta[media="(prefers-color-scheme: light)"]').setAttribute('content', '#f5f5f5');
+        document.querySelector('meta[media="(prefers-color-scheme: dark)"]').setAttribute('content', '#000000');
     },
 
     methods: {

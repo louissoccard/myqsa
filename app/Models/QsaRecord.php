@@ -5,10 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Str;
 
 class QsaRecord extends Model
 {
     use HasFactory;
+
+    protected static function booted()
+    {
+        static::creating(function ($qsa_record) {
+            $qsa_record->presentation_key = Str::random(6);
+        });
+    }
 
     public function user(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
@@ -32,7 +41,7 @@ class QsaRecord extends Model
             'nights_away' => $this->nights_away_percentage(),
             'icv_list' => $this->icv_list_percentage(),
             'dofe' => $this->dofe_percentage(),
-            'presentation' => 0,
+            'presentation' => $this->is_presentation_statement_complete() ? 100 : 0,
         ];
     }
 
@@ -110,5 +119,15 @@ class QsaRecord extends Model
         }
 
         return $total;
+    }
+
+    public function get_presentation_link(): string
+    {
+        return route('presentation-statement.show', $this->presentation_key);
+    }
+
+    public function is_presentation_statement_complete(): bool
+    {
+        return $this->presentation_statement !== null;
     }
 }

@@ -40,13 +40,13 @@
             You must:<br>
             Hold the Gold Duke of Edinburgh's Award.
         </Card>
-<!--        <Card title="Presentation" :href="route('award.presentation.show')" progressBarId="presentation-progress"-->
-<!--                      :percentage="percentages.presentation"-->
-<!--                      colour="#7413dc" class="xl:pr-2 mb-4 xl:mb-0">-->
-<!--            You must:<br>-->
-<!--            Make a presentation covering all elements of your award to a suitable audience, with the aim of inspiring-->
-<!--            and motivating others to achieve the award. The presentation should be the final activity you complete.-->
-<!--        </Card>-->
+        <Card title="Presentation" :href="route('award.presentation.show')" progressBarId="presentation-progress"
+                      :percentage="percentages.presentation"
+                      colour="#7413dc" class="xl:pr-2 mb-4 xl:mb-0">
+            You must:<br>
+            Make a presentation covering all elements of your award to a suitable audience, with the aim of inspiring
+            and motivating others to achieve the award. The presentation should be the final activity you complete.
+        </Card>
 <!--        <Card title="Sign Off" href="{{ route('award.index') }}" class="xl:pl-2"></Card>-->
     </div>
 </template>

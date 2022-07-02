@@ -38,9 +38,13 @@ Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->name('award.')->
 
     Route::get('/dofe', [\App\Http\Controllers\DofeController::class, 'show'])->name('dofe.show');
     Route::post('/dofe/{id}', [\App\Http\Controllers\DofeController::class, 'store'])->name('dofe.store');
+
+    Route::get('/presentation', [\App\Http\Controllers\PresentationController::class, 'show'])->name('presentation.show');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');
+Route::middleware(['web'])->get('/presentation/{presentation_key}', [\App\Http\Controllers\PresentationController::class, 'show_statement_page'])->name('presentation-statement.show');
+Route::middleware(['web'])->post('/presentation/{presentation_key}', [\App\Http\Controllers\PresentationController::class, 'store'])->name('presentation-statement.store');
 
 // Admin Centre
 Route::middleware(['auth:sanctum', 'verified', \App\Http\Middleware\AccessAdminCentre::class])->group(function() {

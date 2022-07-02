@@ -15,6 +15,7 @@ class CreateQsaRecordsTable extends Migration
     {
         Schema::create('qsa_records', function (Blueprint $table) {
             $table->id();
+            $table->string('presentation_key');
             $table->foreignId('user_id')->constrained();
             $table->date('date_of_birth')->nullable();
             $table->date('explorers_start')->nullable();
@@ -29,6 +30,10 @@ class CreateQsaRecordsTable extends Migration
             $table->enum('dofe_skills', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
             $table->enum('dofe_expedition', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
             $table->enum('dofe_residential', ['Not Started', 'In Progress', 'Complete'])->default('Not Started');
+            $table->string('presentation_name')->nullable();
+            $table->string('presentation_email')->nullable();
+            $table->date('presentation_date')->nullable();
+            $table->text('presentation_statement')->nullable();
             $table->timestamps();
         });
     }

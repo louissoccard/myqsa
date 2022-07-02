@@ -11,7 +11,7 @@
             <div class="flex-1">
                 <slot></slot>
             </div>
-            <Card title="Approval" class="flex-grow-0"
+            <Card title="Approval" class="flex-grow-0" v-if="approvalNeeded"
                   :description="'Once you have complete the ' + (altTitle === null ? title.toLowerCase() : altTitle) + ' requirement, you can submit it to be approved. You may also add additional comments.'">
                 <template #header-content>
                     <p>Status: Draft</p>
@@ -37,7 +37,7 @@
             </div>
         </Card>
 
-        <Card title="History" class="min-h-72 order-3" description="Click on a notification to view more information.">
+        <Card title="History" class="min-h-72 order-3" description="Click on a notification to view more information." v-if="historyNeeded">
         </Card>
     </div>
 </template>
@@ -77,6 +77,16 @@ export default defineComponent({
             type: String,
             required: true,
         },
+        approvalNeeded: {
+            type: Boolean,
+            required: false,
+            default: true,
+        },
+        historyNeeded: {
+            type: Boolean,
+            required: false,
+            default: true,
+        }
     },
     computed: {
         progressBarId() {

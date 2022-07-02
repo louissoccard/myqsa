@@ -78,7 +78,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->assignUserRole(...$roles);
         if ($this->hasRole('participant')) {
-            $this->qsa_record()->create();
+            $qsa_record = $this->qsa_record()->create();
+            $this->qsa_record_id = $qsa_record->id;
+            $this->save();
         }
     }
 }

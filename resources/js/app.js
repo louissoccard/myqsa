@@ -19,6 +19,11 @@ let sentenceBuilder = function (parts) {
     return sentence;
 };
 
+let possessive = function(string) {
+    if (string.charAt(string.length - 1) === 's') return string + "'";
+    else return string + "'s";
+};
+
 createInertiaApp({
     title: (title) => `${title} | ${appName}`,
     resolve: (name) => {
@@ -34,7 +39,7 @@ createInertiaApp({
         return createApp({render: () => h(app, props)})
             .use(plugin)
             .mixin({methods: {route}})
-            .mixin({methods: {sentenceBuilder}})
+            .mixin({methods: {sentenceBuilder, possessive}})
             .mount(el);
     },
 });

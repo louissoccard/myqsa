@@ -76,7 +76,7 @@
             <aside
                 class="z-20 hidden fixed left-0 bottom-0 top-16 w-64 overflow-y-auto bg-gray-100 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 md:flex flex-shrink-0 shadow cursor-default select-none">
                 <div class="flex-1 flex flex-col justify-between py-4 text-black dark:text-white">
-                    <MainMenu class="mb-3" :permissions="user.permissions"></MainMenu>
+                    <MainMenu class="mb-3" :permissions="user.permissions" @help="showHelpModal = !showHelpModal"></MainMenu>
                     <div class="inline-block px-6 text-grey-60 text-sm dark:text-grey-20">
                         <h6 class="font-normal">© Hampshire Scouts 2022</h6>
                         <a class="font-bold hover:text-blue dark:hover:text-white" href="#">Privacy Policy</a>
@@ -105,7 +105,7 @@
                             <div class="w-full my-3 px-3">
                                 <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
                             </div>
-                            <MainMenu :permissions="user.permissions"></MainMenu>
+                            <MainMenu :permissions="user.permissions" @help="showHelpModal = !showHelpModal"></MainMenu>
                             <div class="w-full my-3 px-3">
                                 <div class="w-full h-0.5 border-b border-gray-200 dark:border-gray-700"></div>
                             </div>
@@ -140,13 +140,33 @@
 
             <div class="relative w-full mt-16 md:ml-64">
                 <main>
-                    <div class="absolute inset-0 container mx-auto p-6 md:py-10 md:px-10" scroll-region
+                    <div class="absolute inset-0" scroll-region
                          :class="{ 'overflow-y-hidden': showingMobileSidebar, 'overflow-y-auto': !showingMobileSidebar }">
                         <slot></slot>
                     </div>
                 </main>
             </div>
         </div>
+
+        <!-- Help -->
+        <DialogModal :show="showHelpModal" max-width="4xl" :closeable="true" @close="showHelpModal = false">
+            <template #title>
+                Help
+            </template>
+            <template #content>
+                <div class="max-w-1/2">
+                    <p class="font-bold text-lg">Your Permissions</p>
+                    <ul class="max-h-36 overflow-y-auto p-2">
+                        <li v-for="permission of user.permissions">{{ permission }}</li>
+                    </ul>
+                </div>
+            </template>
+            <template #footer>
+                <Button class="inline bg-gray-500 hover:bg-gray-700 disabled:bg-navy-darkened"
+                        type="button" @click="showHelpModal = false">Close
+                </Button>
+            </template>
+        </DialogModal>
     </div>
 </template>
 
@@ -159,6 +179,8 @@ import Feather from "@/Components/Feather";
 import DropdownItem from "@/Components/Interface/DropdownItem";
 import MainMenu from "@/Components/Interface/MainMenu";
 import MainMenuItem from "@/Components/Interface/MainMenuItem";
+import DialogModal from "@/Components/Interface/DialogModal";
+import Button from "@/Components/Buttons/Button";
 
 export default defineComponent({
     props: {
@@ -167,6 +189,7 @@ export default defineComponent({
     },
 
     components: {
+        DialogModal,
         MainMenuItem,
         MainMenu,
         DropdownItem,
@@ -175,11 +198,13 @@ export default defineComponent({
         Head,
         Link,
         Feather,
+        Button,
     },
 
     data() {
         return {
             showingMobileSidebar: false,
+            showHelpModal: false,
         }
     },
 

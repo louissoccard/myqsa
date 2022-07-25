@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\District;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -59,6 +60,16 @@ class UserSeeder extends Seeder
             'description' => 'Ran an overnight litter picking competition for local Explorer units with a prize for the largest collection.',
             'part_of_csa' => false,
         ]);
+
+        $leader = User::create(['first_name' => 'Nick', 'last_name' => 'Goldring', 'email' => 'leader@myqsa.local', 'password' => Hash::make('password'), 'district_id' => 1]);
+        $leader->email_verified_at = now();
+        $leader->save();
+        $leader->assignRole("leader");
+
+        foreach (District::all() as $district) {
+            $leader->givePermissionTo("participants.district-$district->id.view");
+            $leader->givePermissionTo("participants.district-$district->id.edit");
+        }
 
         $admin = User::create(['first_name' => 'Mike', 'last_name' => 'Baxter', 'email' => 'admin@myqsa.local', 'password' => Hash::make('password'), 'district_id' => 1]);
         $admin->email_verified_at = now();

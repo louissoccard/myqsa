@@ -2,7 +2,7 @@ require('./bootstrap');
 
 import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/inertia-vue3';
-import AppLayout from "@/Layouts/AppLayout";
+import PaddedAppLayout from "@/Layouts/PaddedAppLayout";
 import NProgress from "nprogress";
 import { Inertia } from "@inertiajs/inertia";
 
@@ -30,7 +30,7 @@ createInertiaApp({
         const page = require(`./Pages/${name}`);
 
         if (name.startsWith('App/')) {
-            page.default.layout = page.default.layout || AppLayout;
+            page.default.layout = page.default.layout || PaddedAppLayout;
         }
 
         return page.default;

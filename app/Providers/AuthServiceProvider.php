@@ -26,6 +26,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('access-participants', function (User $user) {
+            return $user->getAllPermissions()->filter(fn ($item) => preg_match("#^participants\.district|group\..*$#", $item->name))->count() > 0;
+        });
+
         Gate::define('access-admin-centre', function (User $user) {
             return $user->getAllPermissions()->filter(fn ($item) => preg_match("#^admin-centre\..*$#", $item->name))->count() > 0;
         });

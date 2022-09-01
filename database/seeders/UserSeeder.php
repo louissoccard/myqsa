@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
         $participant->qsa_record->network_start = '2021-04-09';
         $participant->qsa_record->dofe_number = '123456';
         $participant->qsa_record->dofe_organisation = 'Hampshire Scouts';
-        $participant->qsa_record->dofe_completion = '12/05/2022';
+        $participant->qsa_record->dofe_completion = '2022-05-12';
         $participant->qsa_record->dofe_volunteering = 'Complete';
         $participant->qsa_record->dofe_skills = 'Complete';
         $participant->qsa_record->dofe_physical = 'Complete';

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 
@@ -129,5 +130,14 @@ class QsaRecord extends Model
     public function is_presentation_statement_complete(): bool
     {
         return $this->presentation_statement !== null;
+    }
+
+    public function is_complete(): bool
+    {
+        if (Collection::make($this->percentages())->sum() >= 500) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

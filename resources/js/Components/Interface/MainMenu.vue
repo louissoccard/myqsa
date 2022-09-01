@@ -9,6 +9,7 @@
             <SubMenuItem active-colour-class="bg-pink" :active="current('award.icv-list.show')" :href="route('award.icv-list.show')">ICV List</SubMenuItem>
             <SubMenuItem active-colour-class="bg-yellow" :active="current('award.dofe.show')" :href="route('award.dofe.show')">DofE</SubMenuItem>
             <SubMenuItem active-colour-class="bg-purple" :active="current('award.presentation.show')" :href="route('award.presentation.show')">Presentation</SubMenuItem>
+            <SubMenuItem active-colour-class="bg-gray-400" :active="current('award.reports.show')" :href="route('award.reports.show')">Generate Reports</SubMenuItem>
         </SubMenu>
 
         <MainMenuItem v-if="canAccessMyParticipants" :active="false" :href="route('dashboard')" icon="users">My Participants</MainMenuItem>

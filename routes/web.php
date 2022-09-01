@@ -40,6 +40,9 @@ Route::middleware(['auth:sanctum', 'verified', 'can:qsa.has'])->name('award.')->
     Route::post('/dofe/{id}', [\App\Http\Controllers\DofeController::class, 'store'])->name('dofe.store');
 
     Route::get('/presentation', [\App\Http\Controllers\PresentationController::class, 'show'])->name('presentation.show');
+
+    Route::get('/reports', [\App\Http\Controllers\ReportController::class, 'show'])->name('reports.show');
+    Route::get('/reports/generate', [\App\Http\Controllers\ReportController::class, 'generate'])->name('reports.generate');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage-account', function () {return Inertia::render('Logo');} )->name('manage-account');

@@ -9,6 +9,6 @@ class AwardController extends Controller
 {
     public function show(Request $request)
     {
-        return Inertia::render("App/Award/Index", ['percentages' => $request->user()->qsa_record->percentages()]);
+        return Inertia::render("App/Award/Index", ['qsa_complete' => $request->user()->qsa_record->is_complete(), 'percentages' => $request->user()->qsa_record->percentages()]);
     }
 }
